@@ -1,5 +1,39 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #fff;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #242424;
+}
+
+#root > div {
+  margin-block: 2rem; /* css equivalent to tailwind's my-* */
+}
+
+a {
+  color: goldenrod;
+}
+
+/* Navbar */
+.nav-div {
+  background-color: rgb(99, 7, 185);
+  border-radius: 1em;
+}
+
+/* Overview */
+#overview {
+  background-color: rgb(99, 7, 185);
+  border-radius: 0.5rem;
+}
+
+/* Work Experience */
+#work-experience {
+}
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -65,4 +99,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
