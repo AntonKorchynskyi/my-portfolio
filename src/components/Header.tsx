@@ -1,19 +1,31 @@
+const navItems = [
+  { href: "#overview", label: "Overview" },
+  { href: "#skills", label: "Skills" },
+  { href: "#work-experience", label: "Work Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#now", label: "Now" },
+  { href: "#links", label: "Links" },
+  { href: "#form", label: "Contact" },
+];
+
 const Header = () => {
   return (
-    <div className="nav-div">
-      <nav>
-        <div className="name">Anton Korchynskyi</div>
-        <div className="main-links">
-          <a href="#overview">Overview</a>
-          <a href="#skills">Skills</a>
-          <a href="#work-experience">Work Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#links">Links</a>
-          <a href="#now">What I'm doing now</a>
-        </div>
-      </nav>
-    </div>
+    <header className="site-header">
+      <div className="header-inner">
+        <a className="brand" href="#overview">
+          <span className="brand-name">Anton Korchynskyi</span>
+          <span className="brand-role">Developer | Full-Stack & Cloud</span>
+        </a>
+        <nav aria-label="Primary navigation" className="main-links">
+          {navItems.map((item) => (
+            <a href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 };
 

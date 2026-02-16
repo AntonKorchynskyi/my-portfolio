@@ -1,7 +1,16 @@
-import React from "react";
-
 const Now = () => {
-  return <div id="now">What I am working on now</div>;
+  return (
+    <section className="section" id="now">
+      <p className="section-kicker">Now</p>
+      <h2>What I&apos;m Doing Now</h2>
+      <article className="card">
+        <p>
+          I am currently creating and refining my portfolio to showcase my
+          engineering work, delivery experience, and project outcomes.
+        </p>
+      </article>
+    </section>
+  );
 };
 
 export default Now;

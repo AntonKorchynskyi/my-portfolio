@@ -1,5 +1,6 @@
 import "./App.css";
 import Education from "./components/Education";
+import Form from "./components/Form";
 import Header from "./components/Header";
 import Links from "./components/Links";
 import Now from "./components/Now";
@@ -17,8 +18,9 @@ function App() {
       <WorkExp />
       <Projects />
       <Education />
-      <Links />
       <Now />
+      <Links />
+      <Form />
     </>
   );
 }
