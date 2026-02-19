@@ -1,12 +1,23 @@
+import { config } from "../config";
+
 const navItems = [
   { href: "#overview", label: "Overview" },
-  { href: "#overview-links", label: "Links" },
+  { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#work-experience", label: "Work Experience" },
   { href: "#education", label: "Education" },
   { href: "#form", label: "Contact" },
 ];
+
+const handleResumeDownload = () => {
+  const link = document.createElement("a");
+  link.href = config.resumeUrl;
+  link.download = "Anton-Korchynskyi-Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 const Header = () => {
   return (
@@ -22,6 +33,13 @@ const Header = () => {
               {item.label}
             </a>
           ))}
+          <button 
+            className="header-resume-btn" 
+            onClick={handleResumeDownload}
+            aria-label="Download resume"
+          >
+            Resume
+          </button>
         </nav>
       </div>
     </header>
