@@ -27,32 +27,15 @@ const scrollToSection = (sectionId: string) => {
 const Overview = () => {
   return (
     <section className="section section-overview" id="overview">
-      {/* Text left, image right; tags and buttons below */}
       <div className="overview-hero">
         <div className="overview-content">
           <p className="section-kicker">Overview</p>
-          <h1>Hello, I'm <span className="highlight">Anton</span> and I build accessible, production-ready web applications for government and enterprise clients.</h1>
+          <h1>Hello, I'm <span className="highlight">Anton</span> and I build accessible web applications that ship.</h1>
           <p>
-            I am a full-stack developer specializing in React, Azure, and AODA-compliant solutions. 
-            I focus on clean UI, practical architecture, and delivery in real production environments.
+            I’m a full-stack developer focused on building accessible and reliable web applications.
+            I care about clean interfaces, thoughtful architecture, and shipping work that performs in real production environments.
           </p>
-          <p>
-            Background: Georgian College graduate, Ontario Public Service project
-            delivery, and ongoing personal project work.
-          </p>
-          <p className="career-goal">
-            {config.careerGoal}
-          </p>
-        </div>
-        <div
-          className="overview-photo-slot"
-          aria-label="Profile photo"
-        >
-          <img src={config.headshotUrl} alt="Anton Korchynskyi" />
-        </div>
-      </div>
-
-      <div className="overview-ctas">
+          <div className="overview-ctas">
         <button
           className="cta-button cta-primary"
           onClick={handleResumeDownload}
@@ -75,6 +58,16 @@ const Overview = () => {
           Get In Touch
         </button>
       </div>
+        </div>
+        <div
+          className="overview-photo-slot"
+          aria-label="Profile photo"
+        >
+          <img src={config.headshotUrl} alt="Anton Korchynskyi" />
+        </div>
+      </div>
+
+      
       <div className="overview-links" id="overview-links">
         {profileLinks.map((link) => (
           <a

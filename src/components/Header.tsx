@@ -7,7 +7,6 @@ const navItems = [
   { href: "#skills", label: "Skills" },
   { href: "#work-experience", label: "Work Experience" },
   { href: "#education", label: "Education" },
-  { href: "#form", label: "Contact" },
 ];
 
 const handleResumeDownload = () => {

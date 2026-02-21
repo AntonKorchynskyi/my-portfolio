@@ -1,7 +1,6 @@
 import "./App.css";
 import About from "./components/About";
 import Education from "./components/Education";
-import Form from "./components/Form";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Overview from "./components/Overview";
@@ -19,7 +18,6 @@ function App() {
       <WorkExp />
       <Projects />
       <Education />
-      <Form />
       <Footer />
     </>
   );
