@@ -31,7 +31,6 @@ const Footer = () => {
         </div>
         <div className="footer-meta">
           <p>© {currentYear} Anton Korchynskyi</p>
-          <p className="footer-tech">Built with React & TypeScript</p>
         </div>
       </div>
     </footer>

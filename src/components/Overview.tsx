@@ -1,9 +1,11 @@
 import { config } from "../config";
+import GitHubIcon from "../assets/GitHub_Invertocat_Black.svg";
+import LinkedInIcon from "../assets/linkedin-svgrepo-com.svg";
 
 const profileLinks = [
-  { href: config.github, icon: "GH", label: "GitHub" },
-  { href: config.linkedin, icon: "in", label: "LinkedIn" },
-  { href: `mailto:${config.email}`, icon: "@", label: "Email" },
+  { href: config.github, icon: GitHubIcon, label: "GitHub", type: "svg" as const },
+  { href: config.linkedin, icon: LinkedInIcon, label: "LinkedIn", type: "svg" as const },
+  { href: `mailto:${config.email}`, icon: "@", label: "Email", type: "text" as const },
 ];
 
 const handleResumeDownload = () => {
@@ -25,71 +27,73 @@ const scrollToSection = (sectionId: string) => {
 const Overview = () => {
   return (
     <section className="section section-overview" id="overview">
-      <div
-        className="overview-photo-slot"
-        aria-label="Profile photo"
-      >
-        {/* TODO: Replace with actual headshot image */}
-        <span>Photo</span>
+      {/* Text left, image right; tags and buttons below */}
+      <div className="overview-hero">
+        <div className="overview-content">
+          <p className="section-kicker">Overview</p>
+          <h1>Hello, I'm <span className="highlight">Anton</span> and I build accessible, production-ready web applications for government and enterprise clients.</h1>
+          <p>
+            I am a full-stack developer specializing in React, Azure, and AODA-compliant solutions. 
+            I focus on clean UI, practical architecture, and delivery in real production environments.
+          </p>
+          <p>
+            Background: Georgian College graduate, Ontario Public Service project
+            delivery, and ongoing personal project work.
+          </p>
+          <p className="career-goal">
+            {config.careerGoal}
+          </p>
+        </div>
+        <div
+          className="overview-photo-slot"
+          aria-label="Profile photo"
+        >
+          <img src={config.headshotUrl} alt="Anton Korchynskyi" />
+        </div>
       </div>
-      <div className="overview-content">
-        <p className="section-kicker">Overview</p>
-        <h1>I build accessible, production-ready web applications for government and enterprise clients.</h1>
-        <p>
-          I am Anton Korchynskyi, a full-stack developer specializing in React, Azure, and AODA-compliant solutions. 
-          I focus on clean UI, practical architecture, and delivery in real production environments.
-        </p>
-        <p>
-          Background: Georgian College graduate, Ontario Public Service project
-          delivery (SOAB, EDR, BXP), and ongoing portfolio/product work.
-        </p>
-        <p className="career-goal">
-          {config.careerGoal}
-        </p>
-        <div className="overview-highlights">
-          <span>React + TypeScript</span>
-          <span>Cloud + DevOps</span>
-          <span>AODA/WCAG</span>
-        </div>
-        <div className="overview-ctas">
-          <button 
-            className="cta-button cta-primary" 
-            onClick={handleResumeDownload}
-            aria-label="Download resume"
+
+      <div className="overview-ctas">
+        <button
+          className="cta-button cta-primary"
+          onClick={handleResumeDownload}
+          aria-label="Download resume"
+        >
+          View My Resume
+        </button>
+        <button
+          className="cta-button cta-secondary"
+          onClick={() => scrollToSection("projects")}
+          aria-label="View projects"
+        >
+          See My Work
+        </button>
+        <button
+          className="cta-button cta-secondary"
+          onClick={() => scrollToSection("form")}
+          aria-label="Contact me"
+        >
+          Get In Touch
+        </button>
+      </div>
+      <div className="overview-links" id="overview-links">
+        {profileLinks.map((link) => (
+          <a
+            className="overview-link"
+            href={link.href}
+            key={link.label}
+            target="_blank"
+            rel="noreferrer"
           >
-            View My Resume
-          </button>
-          <button 
-            className="cta-button cta-secondary" 
-            onClick={() => scrollToSection("projects")}
-            aria-label="View projects"
-          >
-            See My Work
-          </button>
-          <button 
-            className="cta-button cta-secondary" 
-            onClick={() => scrollToSection("form")}
-            aria-label="Contact me"
-          >
-            Get In Touch
-          </button>
-        </div>
-        <div className="overview-links" id="overview-links">
-          {profileLinks.map((link) => (
-            <a
-              className="overview-link"
-              href={link.href}
-              key={link.label}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span aria-hidden="true" className="overview-link-icon">
-                {link.icon}
-              </span>
-              <span className="overview-link-label">{link.label}</span>
-            </a>
-          ))}
-        </div>
+            <span aria-hidden="true" className="overview-link-icon">
+              {link.type === "svg" ? (
+                <img src={link.icon} alt="" className="overview-link-svg" />
+              ) : (
+                link.icon
+              )}
+            </span>
+            <span className="overview-link-label">{link.label}</span>
+          </a>
+        ))}
       </div>
     </section>
   );

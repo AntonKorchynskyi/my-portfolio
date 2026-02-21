@@ -1,8 +1,8 @@
 ## 1. Content Updates (Foundation)
 
-- [ ] 1.1 Replace all placeholder GitHub URLs with real GitHub profile URL (TODO: Update config.ts)
-- [ ] 1.2 Replace all placeholder LinkedIn URLs with real LinkedIn profile URL (TODO: Update config.ts)
-- [ ] 1.3 Replace all placeholder email addresses (anton@example.com) with real email address (TODO: Update config.ts)
+- [x] 1.1 Replace all placeholder GitHub URLs with real GitHub profile URL (TODO: Update config.ts)
+- [x] 1.2 Replace all placeholder LinkedIn URLs with real LinkedIn profile URL (TODO: Update config.ts)
+- [x] 1.3 Replace all placeholder email addresses (anton@example.com) with real email address (TODO: Update config.ts)
 - [x] 1.4 Update Overview component profileLinks array with real URLs (using config.ts)
 - [ ] 1.5 Verify no "TBD" or placeholder text remains in any component
 
