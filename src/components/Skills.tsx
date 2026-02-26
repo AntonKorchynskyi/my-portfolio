@@ -23,7 +23,7 @@ const SKILLS_BY_CATEGORY: Record<Exclude<Category, "All">, SkillItem[]> = {
   Frontend: [
     { icon: "/src/assets/skills/html.svg", label: "HTML" },
     { icon: "/src/assets/skills/css.svg", label: "CSS" },
-    { icon: "/src/assets/skills/tailwind-css.svg", label: "Tailwind CSS" },
+    { icon: "/src/assets/skills/tailwind.svg", label: "Tailwind CSS" },
     { icon: "/src/assets/skills/react.svg", label: "React" },
     { icon: "/src/assets/skills/nextjs.svg", label: "Next.js" },
     { icon: "/src/assets/skills/angular.svg", label: "Angular" },
@@ -68,8 +68,8 @@ const SKILLS_BY_CATEGORY: Record<Exclude<Category, "All">, SkillItem[]> = {
     { icon: "/src/assets/skills/spark.svg", label: "Spark" },
     { icon: "/src/assets/skills/databricks.svg", label: "Databricks" },
     { icon: "/src/assets/skills/pandas.svg", label: "Pandas" },
-    { icon: "/src/assets/skills/numpy.svg", label: "numpy" },
-    { icon: "/src/assets/skills/powerbi.svg", label: "Power BI" },
+    { icon: "/src/assets/skills/numpy.png", label: "NumPy" },
+    { icon: "/src/assets/skills/powerbi.jpg", label: "Power BI" },
   ],
   API: [
     { icon: "/src/assets/skills/sendgrid.svg", label: "SendGrid" },
@@ -77,11 +77,12 @@ const SKILLS_BY_CATEGORY: Record<Exclude<Category, "All">, SkillItem[]> = {
   ],
   "Other": [
     { icon: "/src/assets/skills/sharepoint.svg", label: "SharePoint" },
-    { icon: "/src/assets/skills/power-automate.svg", label: "Power Automate" },
-    { icon: "/src/assets/skills/WCAG.svg", label: "WCAG" },
+    { icon: "/src/assets/skills/power-automate.png", label: "Power Automate" },
+    { icon: "/src/assets/skills/logic-apps.jpg", label: "Azure Logic Apps" },
+    { icon: "/src/assets/skills/wcag.jfif", label: "WCAG" },
     { icon: "/src/assets/skills/figma.svg", label: "Figma" },
-    { icon: "/src/assets/skills/canva.svg", label: "Canva" },
-    { icon: "/src/assets/skills/miro.svg", label: "Miro" },
+    { icon: "/src/assets/skills/canva.png", label: "Canva" },
+    { icon: "/src/assets/skills/miro.png", label: "Miro" },
   ],
 
 };

@@ -50,13 +50,6 @@ const Overview = () => {
         >
           See My Work
         </button>
-        <button
-          className="cta-button cta-secondary"
-          onClick={() => scrollToSection("form")}
-          aria-label="Contact me"
-        >
-          Get In Touch
-        </button>
       </div>
         </div>
         <div
