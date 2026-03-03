@@ -779,6 +779,10 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .workexp-content--animated {
+    animation: none;
+  }
+
   .edu-button {
     transition: none;
     transform: none;
@@ -1024,6 +1028,47 @@ p {
 .project-toggle-btn:hover {
   background: rgba(123, 169, 255, 0.25);
   border-color: rgba(123, 169, 255, 0.6);
+}
+
+.project-toggle-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.workexp-toggle {
+  margin-top: 0.9rem;
+}
+
+.workexp-overview {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.workexp-role-title {
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  line-height: 1.4;
+}
+
+.workexp-content {
+  border-radius: 12px;
+  min-height: 2.5rem;
+}
+
+.workexp-content--animated {
+  animation: workexp-fade-in 0.32s ease-out;
+}
+
+@keyframes workexp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-case-study {
