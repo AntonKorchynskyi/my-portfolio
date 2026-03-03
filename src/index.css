@@ -226,8 +226,8 @@ p {
   border: 1px solid rgba(123, 169, 255, 0.4);
   background: #0f1730;
   overflow: hidden;
-  width: 350px;
-  height: 400px;
+  width: 300px;
+  height: 350px;
   flex-shrink: 0;
   max-width: 100%;
 }
@@ -408,7 +408,10 @@ p {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1.25rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .cert-card:hover {
@@ -478,7 +481,10 @@ p {
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .cert-card__cta:hover {
@@ -494,6 +500,294 @@ p {
 .cert-card__cta:focus-visible {
   outline: 2px solid var(--accent, #3dd8c6);
   outline-offset: 2px;
+}
+
+/* ---- Education ---- */
+.edu-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edu-card-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.edu-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.edu-school {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.edu-program {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.edu-meta {
+  margin: 0.15rem 0 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.edu-card-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.edu-gpa-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(61, 216, 198, 0.5);
+  background: rgba(61, 216, 198, 0.12);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.edu-dates {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.edu-card-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.25rem;
+}
+
+.edu-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: rgba(61, 216, 198, 0.12);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.edu-button:hover {
+  background: rgba(61, 216, 198, 0.2);
+  border-color: var(--accent);
+  color: #84fff0;
+  transform: translateY(-1px);
+}
+
+.edu-button:focus {
+  outline: none;
+}
+
+.edu-button:focus-visible {
+  outline: 2px solid var(--accent, #3dd8c6);
+  outline-offset: 2px;
+}
+
+.edu-button--subtle {
+  border-color: rgba(123, 169, 255, 0.4);
+  background: rgba(123, 169, 255, 0.08);
+  color: var(--accent-2);
+  padding-inline: 0.75rem;
+}
+
+.edu-button--active {
+  border-color: var(--accent-2);
+  background: rgba(123, 169, 255, 0.2);
+}
+
+.edu-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 4, 12, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.edu-modal {
+  width: min(720px, calc(100% - 2rem));
+  max-height: calc(100% - 3rem);
+  background: radial-gradient(circle at top left, rgba(61, 216, 198, 0.08), transparent 55%), var(--surface-2);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.edu-modal-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 3;
+}
+
+.edu-modal-header h2 {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 1.25rem;
+}
+
+.edu-modal-close {
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  justify-content: center;
+}
+
+.edu-modal-body {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.edu-modal-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.edu-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: min(260px, 100%);
+}
+
+.edu-field-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.edu-input {
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.7rem;
+  background: rgba(9, 15, 29, 0.9);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.edu-input:focus-visible {
+  outline: 2px solid var(--accent, #3dd8c6);
+  outline-offset: 1px;
+}
+
+.edu-sort {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.edu-sort-buttons {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.edu-table-wrapper {
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.edu-table th,
+.edu-table td {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.edu-table thead {
+  background: rgba(10, 15, 31, 0.9);
+}
+
+.edu-table th {
+  font-weight: 600;
+  color: var(--accent-2);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: rgba(10, 15, 31, 0.96);
+}
+
+.edu-table tbody tr:nth-child(even) {
+  background: rgba(17, 26, 47, 0.8);
+}
+
+.edu-table tbody tr:nth-child(odd) {
+  background: rgba(9, 15, 29, 0.9);
+}
+
+.edu-table tbody tr:hover {
+  background: rgba(61, 216, 198, 0.08);
+}
+
+.edu-table td:last-child {
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-button {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .edu-card-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-card-right {
+    align-items: flex-start;
+  }
 }
 
 /* ---- Skills: Category filter & pills ---- */
@@ -546,7 +840,10 @@ p {
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .skills-category-tab:hover {
@@ -616,7 +913,10 @@ p {
   background: rgba(10, 15, 31, 0.65);
   color: #d8e6ff;
   font-size: 0.9rem;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .skills-pill:hover {
