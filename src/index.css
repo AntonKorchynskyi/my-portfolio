@@ -506,7 +506,6 @@ p {
 .edu-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .edu-card-layout {
@@ -634,7 +633,13 @@ p {
 .edu-modal {
   width: min(720px, calc(100% - 2rem));
   max-height: calc(100% - 3rem);
-  background: radial-gradient(circle at top left, rgba(61, 216, 198, 0.08), transparent 55%), var(--surface-2);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(61, 216, 198, 0.08),
+      transparent 55%
+    ),
+    var(--surface-2);
   border-radius: 18px;
   border: 1px solid var(--line);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
