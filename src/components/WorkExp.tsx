@@ -7,61 +7,63 @@ const WorkExp = () => {
     title: "I&IT Technology Analyst/Developer, Ontario Public Service",
     dates: "(2024-2025)",
     summary: [
-      "Contributed to multi-year digital modernization initiatives across core provincial services, building and supporting secure, user-centered solutions that improved delivery speed and operational reliability.",
-      "Worked across frontend development, cloud deployment, low-code process automation, and accessibility-aligned design, collaborating with cross-functional teams to translate policy and business needs into production-ready outcomes.",
-    ],
-    overallStack: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "MySQL",
-      "Docker",
-      "Azure Cloud",
-      "Azure Kubernetes Service (AKS)",
-      "GitHub Actions",
-      "GitHub",
-      "SharePoint",
-      "Power Apps",
-      "Power Automate",
-      "AODA/WCAG",
-      "Ontario Design System",
+      "Contributed to multiple digital modernization initiatives across provincial services, developing accessible web applications, cloud microservices, and workflow automation solutions. Worked in Agile Scrum teams alongside architects, business analysts, designers, DevOps engineers, and QA specialists to deliver production-ready features aligned with government accessibility and security standards. My work spanned front-end development, cloud deployments, API integrations, accessibility compliance, and data analysis supporting platform modernization.",
     ],
     projects: [
       {
         title: "ServiceOntario Account for Business (SOAB) - eForms POC",
         dates: "January 2024 - August 2024",
         description:
-          "Built cloud microservices and deployment pipelines that improved release consistency and platform readiness.",
+          "This proof-of-concept project evaluated integration between a custom digital forms solution and the ServiceOntario business platform. I designed the initial microservice application architecture and implemented both frontend and backend functionality using React, Python Flask, and MySQL. I containerized services with Docker and deployed them to Azure Kubernetes Service, while building CI/CD pipelines with GitHub Actions to automate builds and deployments. The platform integrated SendGrid for automated email notifications and served as a feasibility prototype for scalable cloud-based form processing within the broader ServiceOntario ecosystem.",
         stack: [
           "React",
           "JavaScript",
+          "Python (Flask)",
           "MySQL",
           "Docker",
-          "Azure Cloud",
           "Azure Kubernetes Service (AKS)",
-          "GitHub Actions",
+          "Azure Cloud",
           "GitHub",
+          "GitHub Actions",
+          "CI/CD",
+          "Docker Hub",
+          "SendGrid API",
+          "Postman",
         ],
       },
       {
-        title: "Electronic Death Registration (EDR)",
+        title: "Electronic Death Registration (EDR) Admin Platform",
         dates: "September 2024 - April 2025",
         description:
-          "Modernized workflow operations using Power Apps and Power Automate to reduce manual processing and improve data quality.",
-        stack: ["SharePoint", "Power Apps", "Power Automate"],
+          "Developed an administrative support solution for the Electronic Death Registration system to help internal teams manage operational data and track registered users responsible for institutions such as hospitals, coroners' offices, and cemeteries across Ontario. Built the solution using SharePoint, Power Apps, and Power Automate, structuring SharePoint lists to track institutions and assigned users while automating workflow processes. Implemented geographic visualization using a custom SharePoint SPFx component with Leaflet Maps and integrated Power BI to display mapped institution locations, improving visibility and coordination for internal teams.",
+        stack: [
+          "SharePoint",
+          "Power Apps",
+          "Power Automate",
+          "Power BI",
+          "Leaflet Maps",
+          "SharePoint SPFx",
+        ],
       },
       {
         title: "Business Experience Platform (BXP)",
         dates: "April 2025 - October 2025",
         description:
-          "Delivered accessible React/Next.js UI components aligned with AODA/WCAG and Ontario Design System standards.",
+          "Business Experience Platform is a large-scale modernization of the legacy ServiceOntario Account for Business system. I developed reusable React and Next.js components based on Figma designs and the Ontario Design System, implementing accessible interfaces using semantic HTML, Tailwind CSS, ARIA patterns, and keyboard navigation to meet AODA and WCAG standards. I collaborated with designers, QA testers, and backend developers to deliver features and resolve defects, supported integration with the Ontario Business Registry API, built early proof-of-concept prototypes, and performed Python-based data analysis to assist migration planning from the legacy platform.",
         stack: [
           "React",
           "Next.js",
           "TypeScript",
+          "Tailwind CSS",
+          "HTML",
           "AODA/WCAG",
           "Ontario Design System",
+          "Azure DevOps",
+          "MS SQL",
+          "Postman",
+          "Figma",
+          "pandas",
+          "NumPy",
         ],
       },
     ],
@@ -71,7 +73,7 @@ const WorkExp = () => {
     <section className="section" id="work-experience">
       <p className="section-kicker">Experience</p>
       <h2>Work Experience</h2>
-      <p className="section-intro workexp-role-title">
+      <p className="section-intro workexp-role-title highlight">
         {role.title} {role.dates}
       </p>
 
@@ -82,15 +84,7 @@ const WorkExp = () => {
       </div>
 
       <div id="experience-details" role="region" className="workexp-content">
-        {!isExpanded ? (
-          <div className="project-stack-badges">
-            {role.overallStack.map((tech) => (
-              <span key={tech} className="stack-badge">
-                {tech}
-              </span>
-            ))}
-          </div>
-        ) : (
+        {isExpanded && (
           <div className="timeline workexp-content--animated">
             {role.projects.map((project) => (
               <article key={project.title} className="timeline-item">
@@ -112,7 +106,7 @@ const WorkExp = () => {
 
       <button
         type="button"
-        className="project-toggle-btn workexp-toggle"
+        className="edu-button"
         aria-expanded={isExpanded}
         aria-controls="experience-details"
         onClick={() => setIsExpanded((prev) => !prev)}

@@ -3,9 +3,24 @@ import GitHubIcon from "../assets/GitHub_Invertocat_Black.svg";
 import LinkedInIcon from "../assets/linkedin-svgrepo-com.svg";
 
 const profileLinks = [
-  { href: config.github, icon: GitHubIcon, label: "GitHub", type: "svg" as const },
-  { href: config.linkedin, icon: LinkedInIcon, label: "LinkedIn", type: "svg" as const },
-  { href: `mailto:${config.email}`, icon: "@", label: "Email", type: "text" as const },
+  {
+    href: config.github,
+    icon: GitHubIcon,
+    label: "GitHub",
+    type: "svg" as const,
+  },
+  {
+    href: config.linkedin,
+    icon: LinkedInIcon,
+    label: "LinkedIn",
+    type: "svg" as const,
+  },
+  {
+    href: `mailto:${config.email}`,
+    icon: "@",
+    label: "Email",
+    type: "text" as const,
+  },
 ];
 
 const handleResumeDownload = () => {
@@ -30,37 +45,37 @@ const Overview = () => {
       <div className="overview-hero">
         <div className="overview-content">
           <p className="section-kicker">Overview</p>
-          <h1>Hello, I'm <span className="highlight">Anton</span> and I build accessible web applications that ship.</h1>
+          <h1>
+            Hello, I'm <span className="highlight">Anton</span> and I build
+            accessible production-ready web applications.
+          </h1>
           <p>
-            I’m a full-stack developer focused on building accessible and reliable web applications.
-            I care about clean interfaces, thoughtful architecture, and shipping work that performs in real production environments.
+            Full-stack developer who thrives in collaborative teams. I bring
+            production-proven experience across the full web stack and a genuine
+            commitment to building software that works for everyone.
           </p>
           <div className="overview-ctas">
-        <button
-          className="cta-button cta-primary"
-          onClick={handleResumeDownload}
-          aria-label="Download resume"
-        >
-          View My Resume
-        </button>
-        <button
-          className="cta-button cta-secondary"
-          onClick={() => scrollToSection("projects")}
-          aria-label="View projects"
-        >
-          See My Work
-        </button>
-      </div>
+            <button
+              className="cta-button cta-primary"
+              onClick={handleResumeDownload}
+              aria-label="Download resume"
+            >
+              View My Resume
+            </button>
+            <button
+              className="cta-button cta-secondary"
+              onClick={() => scrollToSection("projects")}
+              aria-label="View projects"
+            >
+              See My Work
+            </button>
+          </div>
         </div>
-        <div
-          className="overview-photo-slot"
-          aria-label="Profile photo"
-        >
+        <div className="overview-photo-slot" aria-label="Profile photo">
           <img src={config.headshotUrl} alt="Anton Korchynskyi" />
         </div>
       </div>
 
-      
       <div className="overview-links" id="overview-links">
         {profileLinks.map((link) => (
           <a

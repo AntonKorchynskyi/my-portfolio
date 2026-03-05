@@ -91,6 +91,19 @@ const EducationCourseworkModal = ({
     if (!isOpen) {
       return;
     }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
     const dialog = dialogRef.current;
     if (!dialog) return;
 
@@ -242,7 +255,7 @@ const Education = () => {
           <div className="edu-card-left">
             <h3 className="edu-school">Georgian College</h3>
             <p className="edu-program">
-              Computer Programming and Analysis· Advanced Diploma · Barrie,
+              Computer Programming and Analysis · Advanced Diploma · Barrie,
               Ontario · Co-op
             </p>
             <p className="edu-meta"></p>
