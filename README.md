@@ -4,6 +4,8 @@ Portfolio website showcasing my development projects and skills.
 
 Built with React, TypeScript, and Vite.
 
+Vercel Analytics is enabled.
+
 ## Description
 
 - **Hero Section**: An introduction
