@@ -1,3 +1,5 @@
+import headshotImage from "./assets/anton_image.png";
+
 // Portfolio configuration
 // TODO: Replace placeholder values with your actual URLs and email
 
@@ -11,7 +13,7 @@ export const config = {
   resumeUrl: "/Anton_Korchynskyi-Resume_Portfolio.pdf", // Resume PDF should be placed in public/ directory
 
   //Image
-  headshotUrl: "src/assets/anton_image.png",
+  headshotUrl: headshotImage,
 
   // Career Goals
   careerGoal:
