@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anton Korchynskyi portfolio favicon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111a2f" />
+      <stop offset="100%" stop-color="#17233e" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3dd8c6" />
+      <stop offset="100%" stop-color="#7ba9ff" />
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="url(#bg)" stroke="#243153" stroke-width="2" />
+  <path d="M14 47 L22 17 L30 47 M17 36 H27" fill="none" stroke="url(#accent)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M36 17 V47 M36 32 L47 17 M36 32 L48 47" fill="none" stroke="#f0f4ff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

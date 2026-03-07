@@ -1,12 +1,12 @@
-import { useState } from "react";
-import backgroundImage from "../assets/background.jpg";
-import { config } from "../config";
+import soundHouseFunIMage from "../assets/projects/SoundHouseFun2.png";
+import boardverse from "../assets/projects/boardverse2.png";
+import noAddict from "../assets/projects/no-addict.png";
+import mailSheet from "../assets/projects/mailsheet.png";
+import movieNest from "../assets/projects/movienest.png";
 
 interface Project {
   title: string;
-  problem: string;
-  process: string;
-  outcome: string;
+  description: string;
   stack: string[];
   image: string;
   githubUrl: string;
@@ -16,38 +16,70 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "SoundHouseFun",
-    problem:
-      "Needed a scalable e-commerce platform for music equipment sales with secure authentication, payment processing, and administrative tools.",
-    process:
-      "Built a full-stack application using ASP.NET Core with C# for the backend API, implementing role-based authentication and authorization. Designed and implemented MS SQL database schema for products, orders, and user management. Created admin dashboard for inventory and order management.",
-    outcome:
-      "Delivered a production-ready e-commerce platform with secure payment integration, user authentication, and comprehensive admin tools.",
-    stack: ["ASP.NET", "C#", "MS SQL"],
-    image: backgroundImage,
-    githubUrl: config.github + "/soundhousefun", // TODO: Update with actual repo path
+    title: "BoardVerse",
+    description:
+      "BoardVerse is a web platform for discovering and playing board games online, featuring user accounts, player profiles with stats, and real-time multiplayer Tic-Tac-Toe. Built with Next.js, Tailwind CSS, and boardgame.io.",
+    stack: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "Python (Flask)",
+    ],
+    image: boardverse,
+    githubUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
   },
   {
-    title: "Portfolio MVP",
-    problem:
-      "Required a modern, accessible portfolio website that showcases work effectively while maintaining fast load times and excellent user experience.",
-    process:
-      "Developed a responsive single-page application using React and TypeScript with Vite for optimal build performance. Implemented smooth scrolling navigation, accessible components following WCAG guidelines, and optimized asset loading.",
-    outcome:
-      "Created a fast, accessible portfolio site with clear information architecture and modern design that effectively communicates value proposition to recruiters.",
-    stack: ["React", "TypeScript", "Vite"],
-    image: backgroundImage,
-    githubUrl: config.github + "/portfolio-mvp", // TODO: Update with actual repo path
+    title: "SoundHouseFun",
+    description:
+      "A full-stack e-commerce music store featuring Stripe payment integration, Google authentication, an admin dashboard for content management, and an MS SQL database backend, built with ASP.NET and C#.",
+    stack: [
+      "ASP.NET",
+      "C#",
+      "MS SQL",
+      "Stripe API",
+      "Bootstrap",
+      "Google oAuth",
+    ],
+    image: soundHouseFunIMage,
+    githubUrl: "https://github.com/AntonKorchynskyi/SoundHouseFun_ASPNET",
+  },
+  {
+    title: "No Addict",
+    description:
+      "No Addict is a lightweight Chrome extension that helps users reduce digital distraction by blocking access to selected websites. Users can add domains or specific URLs they want to avoid, enable or disable blocking as needed, and automatically prevent those pages from loading by clearing their content.",
+    stack: ["JavaScript", "HTML", "CSS", "Google Chrome"],
+    image: noAddict,
+    githubUrl: "https://github.com/AntonKorchynskyi/no-addict",
+  },
+  {
+    title: "MovieNest",
+    description:
+      "Android movie discovery app with Firebase authentication and cloud favorites, enabling users to search OMDb titles, view rich details, and manage personalized watchlists through an MVVM architecture and RecyclerView interface.",
+    stack: [
+      "Java",
+      "Android SDK",
+      "MVVM",
+      "Firebase Authentication",
+      "Firebase Firestore",
+      "OMDb API",
+      "Gradle",
+    ],
+    image: movieNest,
+    githubUrl: "https://github.com/AntonKorchynskyi/MovieNest",
+  },
+  {
+    title: "MailSheet Automator",
+    description:
+      "Python automation tool that processes Excel spreadsheets to validate and generate standardized email addresses, then automatically sends bulk HTML emails through Microsoft Outlook. Built using openpyxl, PyInputPlus, and the Outlook COM API.",
+    stack: ["Python", "openpyxl", "PyInputPlus", "pywin32 (Outlook COM API)"],
+    image: mailSheet,
+    githubUrl: "https://github.com/AntonKorchynskyi/MailSheet-Automator",
   },
 ];
 
 const Projects = () => {
-  const [expandedProject, setExpandedProject] = useState<string | null>(null);
-
-  const toggleExpand = (title: string) => {
-    setExpandedProject(expandedProject === title ? null : title);
-  };
-
   return (
     <section className="section" id="projects">
       <p className="section-kicker">Projects</p>
@@ -71,7 +103,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              <p className="project-summary">{project.outcome}</p>
+              <p className="project-summary">{project.description}</p>
 
               <div className="project-links">
                 {project.demoUrl && (

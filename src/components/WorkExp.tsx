@@ -51,8 +51,8 @@ const WorkExp = () => {
         description:
           "Business Experience Platform is a large-scale modernization of the legacy ServiceOntario Account for Business system. I developed reusable React and Next.js components based on Figma designs and the Ontario Design System, implementing accessible interfaces using semantic HTML, Tailwind CSS, ARIA patterns, and keyboard navigation to meet AODA and WCAG standards. I collaborated with designers, QA testers, and backend developers to deliver features and resolve defects, supported integration with the Ontario Business Registry API, built early proof-of-concept prototypes, and performed Python-based data analysis to assist migration planning from the legacy platform.",
         stack: [
-          "React",
           "Next.js",
+          "React",
           "TypeScript",
           "Tailwind CSS",
           "HTML",
