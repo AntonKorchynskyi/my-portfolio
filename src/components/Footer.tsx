@@ -1,12 +1,8 @@
 import { config } from "../config";
+import { downloadResume } from "../utils/downloadResume";
 
 const handleResumeDownload = () => {
-  const link = document.createElement("a");
-  link.href = config.resumeUrl;
-  link.download = "Anton-Korchynskyi-Resume.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  downloadResume(config.resumeUrl, "Anton-Korchynskyi-Resume.pdf");
 };
 
 const Footer = () => {
@@ -25,7 +21,11 @@ const Footer = () => {
           <a href={`mailto:${config.email}`} aria-label="Email">
             Email
           </a>
-          <button onClick={handleResumeDownload} className="footer-resume-link">
+          <button
+            onClick={handleResumeDownload}
+            className="footer-resume-link"
+            aria-label="Download resume"
+          >
             Resume
           </button>
         </div>

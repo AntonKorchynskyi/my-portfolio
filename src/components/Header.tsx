@@ -1,4 +1,5 @@
 import { config } from "../config";
+import { downloadResume } from "../utils/downloadResume";
 
 const navItems = [
   { href: "#overview", label: "Overview" },
@@ -7,15 +8,11 @@ const navItems = [
   { href: "#skills", label: "Skills" },
   { href: "#work-experience", label: "Work Experience" },
   { href: "#education", label: "Education" },
+  { href: "#certifications", label: "Certifications" },
 ];
 
 const handleResumeDownload = () => {
-  const link = document.createElement("a");
-  link.href = config.resumeUrl;
-  link.download = "Anton-Korchynskyi-Resume.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  downloadResume(config.resumeUrl, "Anton-Korchynskyi-Resume.pdf");
 };
 
 const Header = () => {

@@ -12,14 +12,19 @@ import WorkExp from "./components/WorkExp";
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Header />
-      <Overview />
-      <About />
-      <Skills />
-      <WorkExp />
-      <Projects />
-      <Education />
-      <Certs />
+      <main id="main-content">
+        <Overview />
+        <About />
+        <Skills />
+        <WorkExp />
+        <Projects />
+        <Education />
+        <Certs />
+      </main>
       <Footer />
     </>
   );

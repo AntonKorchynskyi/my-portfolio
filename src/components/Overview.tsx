@@ -1,4 +1,5 @@
 import { config } from "../config";
+import { downloadResume } from "../utils/downloadResume";
 import GitHubIcon from "../assets/GitHub_Invertocat_Black.svg";
 import LinkedInIcon from "../assets/linkedin-svgrepo-com.svg";
 
@@ -8,28 +9,26 @@ const profileLinks = [
     icon: GitHubIcon,
     label: "GitHub",
     type: "svg" as const,
+    external: true,
   },
   {
     href: config.linkedin,
     icon: LinkedInIcon,
     label: "LinkedIn",
     type: "svg" as const,
+    external: true,
   },
   {
     href: `mailto:${config.email}`,
     icon: "@",
     label: "Email",
     type: "text" as const,
+    external: false,
   },
 ];
 
 const handleResumeDownload = () => {
-  const link = document.createElement("a");
-  link.href = config.resumeUrl;
-  link.download = "Anton-Korchynskyi-Resume.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  downloadResume(config.resumeUrl, "Anton-Korchynskyi-Resume.pdf");
 };
 
 const scrollToSection = (sectionId: string) => {
@@ -41,11 +40,15 @@ const scrollToSection = (sectionId: string) => {
 
 const Overview = () => {
   return (
-    <section className="section section-overview" id="overview">
+    <section
+      className="section section-overview"
+      id="overview"
+      aria-labelledby="overview-title"
+    >
       <div className="overview-hero">
         <div className="overview-content">
           <p className="section-kicker">Overview</p>
-          <h1>
+          <h1 id="overview-title">
             Hello, I'm <span className="highlight">Anton</span> and I build
             accessible production-ready web applications.
           </h1>
@@ -81,9 +84,10 @@ const Overview = () => {
           <a
             className="overview-link"
             href={link.href}
-            key={link.label}
-            target="_blank"
-            rel="noreferrer"
+            key={link.href + link.label}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noreferrer" : undefined}
+            aria-label={link.label}
           >
             <span aria-hidden="true" className="overview-link-icon">
               {link.type === "svg" ? (

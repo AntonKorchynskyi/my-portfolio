@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Keep crawlers out of internal asset pipelines if they ever become reachable.
+Disallow: /src/
+Disallow: /node_modules/
+
+Sitemap: https://anton-korchynskyi-portfolio.vercel.app/sitemap.xml

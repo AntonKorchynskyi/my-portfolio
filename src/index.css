@@ -55,6 +55,33 @@ body {
   gap: 1.15rem;
 }
 
+main {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -62,6 +89,31 @@ a {
 
 a:hover {
   color: #84fff0;
+}
+
+:where(
+    a[href],
+    button,
+    input,
+    textarea,
+    select,
+    summary,
+    [tabindex]:not([tabindex="-1"])
+  ):focus {
+  outline: none;
+}
+
+:where(
+    a[href],
+    button,
+    input,
+    textarea,
+    select,
+    summary,
+    [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
+  outline: 2px solid var(--accent, #3dd8c6);
+  outline-offset: 2px;
 }
 
 .site-header {
@@ -110,6 +162,10 @@ a:hover {
 }
 
 .main-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: 0.42rem 0.78rem;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -126,6 +182,10 @@ a:hover {
 }
 
 .header-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: 0.42rem 0.78rem;
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -237,7 +297,6 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-  vertical-align: middle;
 }
 
 .overview-photo-slot span {
@@ -279,6 +338,7 @@ p {
 }
 
 .cta-button {
+  min-height: 44px;
   border-radius: 999px;
   border: none;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
@@ -327,6 +387,8 @@ p {
 .overview-link {
   display: grid;
   justify-items: center;
+  align-items: center;
+  min-height: 44px;
   gap: 0.38rem;
   padding: 0.65rem 0.5rem;
   border: 1px solid var(--line);
@@ -389,10 +451,6 @@ p {
 }
 
 /* ---- Certifications ---- */
-.certs-section {
-  /* no extra section overrides; uses .section */
-}
-
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -472,6 +530,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
+  min-height: 44px;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -491,15 +550,6 @@ p {
   background: rgba(61, 216, 198, 0.2);
   border-color: var(--accent);
   color: #84fff0;
-}
-
-.cert-card__cta:focus {
-  outline: none;
-}
-
-.cert-card__cta:focus-visible {
-  outline: 2px solid var(--accent, #3dd8c6);
-  outline-offset: 2px;
 }
 
 /* ---- Education ---- */
@@ -575,6 +625,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  min-height: 44px;
   padding: 0.5rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -598,15 +649,6 @@ p {
   border-color: var(--accent);
   color: #84fff0;
   transform: translateY(-1px);
-}
-
-.edu-button:focus {
-  outline: none;
-}
-
-.edu-button:focus-visible {
-  outline: 2px solid var(--accent, #3dd8c6);
-  outline-offset: 2px;
 }
 
 .edu-button--subtle {
@@ -713,8 +755,7 @@ p {
 }
 
 .edu-input:focus-visible {
-  outline: 2px solid var(--accent, #3dd8c6);
-  outline-offset: 1px;
+  outline-offset: 2px;
 }
 
 .edu-sort {
@@ -817,12 +858,11 @@ p {
   gap: 0.5rem;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.25rem;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.25rem;
 }
 
 .skills-category-list::-webkit-scrollbar {
@@ -840,6 +880,10 @@ p {
 }
 
 .skills-category-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   flex-shrink: 0;
   padding: 0.5rem 1rem;
   border-radius: 999px;
@@ -849,6 +893,7 @@ p {
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1.2;
   cursor: pointer;
   transition:
     color 0.2s ease,
@@ -975,7 +1020,7 @@ p {
 .project-image {
   width: 100%;
   height: 330px;
-  object-fit: fill;
+  object-fit: cover;
   display: block;
 }
 
@@ -1029,11 +1074,6 @@ p {
 .project-toggle-btn:hover {
   background: rgba(123, 169, 255, 0.25);
   border-color: rgba(123, 169, 255, 0.6);
-}
-
-.project-toggle-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 .workexp-toggle {
@@ -1103,6 +1143,10 @@ p {
 }
 
 .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
   color: var(--accent);
   text-decoration: none;
   font-size: 0.85rem;
@@ -1208,10 +1252,9 @@ p {
   resize: vertical;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid rgba(61, 216, 198, 0.55);
-  outline-offset: 0;
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline-offset: 2px;
   border-color: transparent;
 }
 

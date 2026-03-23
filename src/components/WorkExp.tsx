@@ -72,7 +72,7 @@ const WorkExp = () => {
   return (
     <section className="section" id="work-experience">
       <p className="section-kicker">Experience</p>
-      <h2>Work Experience</h2>
+      <h2 id="work-experience-title">Work Experience</h2>
       <p className="section-intro workexp-role-title highlight">
         {role.title} {role.dates}
       </p>
@@ -83,7 +83,12 @@ const WorkExp = () => {
         ))}
       </div>
 
-      <div id="experience-details" role="region" className="workexp-content">
+      <div
+        id="experience-details"
+        role="region"
+        aria-labelledby="work-experience-title"
+        className="workexp-content"
+      >
         {isExpanded && (
           <div className="timeline workexp-content--animated">
             {role.projects.map((project) => (
@@ -109,6 +114,9 @@ const WorkExp = () => {
         className="edu-button"
         aria-expanded={isExpanded}
         aria-controls="experience-details"
+        aria-label={
+          isExpanded ? "Hide detailed project timeline" : "View detailed project timeline"
+        }
         onClick={() => setIsExpanded((prev) => !prev)}
       >
         {isExpanded ? "Hide Project Details ▲" : "View Project Details ▼"}
