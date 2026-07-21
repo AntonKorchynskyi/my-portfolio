@@ -1,6 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-
-type CourseworkSort = "grade" | "code";
+import { useEffect, useRef, useState } from "react";
 
 interface Coursework {
   code: string;
@@ -49,6 +47,15 @@ const rawCoursework: Coursework[] = [
   { code: "MGMT 2001", name: "Principles of Management", grade: 88 },
 ];
 
+const coursework = [...rawCoursework].sort((a, b) => {
+  const gradeA = typeof a.grade === "number" ? a.grade : -1;
+  const gradeB = typeof b.grade === "number" ? b.grade : -1;
+  if (gradeA !== gradeB) {
+    return gradeB - gradeA;
+  }
+  return a.code.localeCompare(b.code);
+});
+
 interface EducationCourseworkModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -61,31 +68,6 @@ const EducationCourseworkModal = ({
   triggerRef,
 }: EducationCourseworkModalProps) => {
   const dialogRef = useRef<HTMLDivElement | null>(null);
-  const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState<CourseworkSort>("grade");
-
-  const filteredCourses = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    let courses = rawCoursework;
-    if (query) {
-      courses = courses.filter(
-        (c) =>
-          c.code.toLowerCase().includes(query) ||
-          c.name.toLowerCase().includes(query),
-      );
-    }
-    const sorted = [...courses].sort((a, b) => {
-      if (sortBy === "grade") {
-        const gradeA = typeof a.grade === "number" ? a.grade : -1;
-        const gradeB = typeof b.grade === "number" ? b.grade : -1;
-        if (gradeA !== gradeB) {
-          return gradeB - gradeA;
-        }
-      }
-      return a.code.localeCompare(b.code);
-    });
-    return sorted;
-  }, [search, sortBy]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -176,42 +158,6 @@ const EducationCourseworkModal = ({
           </button>
         </header>
         <div className="edu-modal-body">
-          <div className="edu-modal-controls">
-            <label className="edu-field">
-              <span className="edu-field-label">Search courses</span>
-              <input
-                type="text"
-                className="edu-input"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Filter by code or course name"
-              />
-            </label>
-            <div className="edu-sort">
-              <span className="edu-field-label">Sort by</span>
-              <div className="edu-sort-buttons">
-                <button
-                  type="button"
-                  className={`edu-button edu-button--subtle ${
-                    sortBy === "grade" ? "edu-button--active" : ""
-                  }`}
-                  onClick={() => setSortBy("grade")}
-                >
-                  Grade
-                </button>
-                <button
-                  type="button"
-                  className={`edu-button edu-button--subtle ${
-                    sortBy === "code" ? "edu-button--active" : ""
-                  }`}
-                  onClick={() => setSortBy("code")}
-                >
-                  Code
-                </button>
-              </div>
-            </div>
-          </div>
-
           <div className="edu-table-wrapper">
             <table className="edu-table">
               <thead>
@@ -222,7 +168,7 @@ const EducationCourseworkModal = ({
                 </tr>
               </thead>
               <tbody>
-                {filteredCourses.map((course) => (
+                {coursework.map((course) => (
                   <tr key={course.code + course.name}>
                     <td>{course.code}</td>
                     <td>{course.name}</td>
