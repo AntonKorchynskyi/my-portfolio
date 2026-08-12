@@ -3,6 +3,7 @@ import boardverse from "../assets/projects/boardverse2.png";
 import noAddict from "../assets/projects/no-addict.png";
 import mailSheet from "../assets/projects/mailsheet.png";
 import movieNest from "../assets/projects/movienest.png";
+import chartLab from "../assets/projects/chartlab.png";
 
 interface Project {
   title: string;
@@ -52,6 +53,28 @@ const projects: Project[] = [
     stack: ["JavaScript", "HTML", "CSS", "Google Chrome"],
     image: noAddict,
     githubUrl: "https://github.com/AntonKorchynskyi/no-addict",
+  },
+  {
+    title: "Chart Lab",
+
+    description:
+      "Chart Lab is a full-stack data visualization playground for comparing charting libraries by rendering the same revenue datasets with Chart.js, Recharts, Nivo, ECharts, D3, and Observable Plot.",
+
+    stack: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Chart.js",
+      "Recharts",
+      "Nivo",
+      "ECharts",
+      "D3",
+      "Observable Plot",
+    ],
+    image: chartLab,
+    githubUrl: "https://github.com/AntonKorchynskyi/chart-lab",
   },
   {
     title: "MovieNest",
