@@ -1,7 +1,6 @@
 import headshotImage from "./assets/anton_image.png";
 
 // Portfolio configuration
-// TODO: Replace placeholder values with your actual URLs and email
 
 export const config = {
   // Social Links
@@ -15,7 +14,11 @@ export const config = {
   //Image
   headshotUrl: headshotImage,
 
-  // Career Goals
-  careerGoal:
-    "Currently seeking Full-Stack Developer roles in remote/hybrid environments and collaboration on interesting projects.", // TODO: Customize based on your goals
+  // Availability, shown in the hero, contact section and footer
+  availability: "Available now for Full-Stack and Frontend roles",
+  location: "Ontario, Canada · Remote or hybrid",
+
+  // Web3Forms access key for the contact form (set in .env.local and on Vercel).
+  // When missing, the form is hidden and only the direct contact options show.
+  contactFormKey: import.meta.env.VITE_WEB3FORMS_KEY as string | undefined,
 };

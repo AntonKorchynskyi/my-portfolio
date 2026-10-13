@@ -17,6 +17,11 @@ const trackVirtual = (path: string) => {
   pageview({ path, route: path });
 };
 
+// Outcomes that aren't clicks, e.g. trackEvent("sent/contact") -> /sent/contact.
+export const trackEvent = (name: string) => {
+  trackVirtual(`/${name}`);
+};
+
 const isOptedOut = () => {
   try {
     return localStorage.getItem(OPT_OUT_KEY) !== null;
