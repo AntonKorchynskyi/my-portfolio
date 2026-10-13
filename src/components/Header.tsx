@@ -2,13 +2,11 @@ import { config } from "../config";
 import { downloadResume } from "../utils/downloadResume";
 
 const navItems = [
-  { href: "#overview", label: "Overview" },
-  { href: "#about", label: "About" },
+  { href: "#work-experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#work-experience", label: "Work Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#certifications", label: "Certifications" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const handleResumeDownload = () => {

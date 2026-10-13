@@ -120,6 +120,20 @@ a:hover {
   position: relative;
 }
 
+/* Sticky only where the header fits on one or two rows; on phones it would
+   cover too much of the screen. */
+@media (min-width: 881px) {
+  .site-header {
+    position: sticky;
+    top: 0.5rem;
+    z-index: 30;
+  }
+
+  main > section[id] {
+    scroll-margin-top: 7rem;
+  }
+}
+
 .header-inner {
   display: flex;
   flex-wrap: wrap;
@@ -320,6 +334,46 @@ p {
   padding: 0.28rem 0.66rem;
   color: #d8e6ff;
   font-size: 0.88rem;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: start;
+  margin: 0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(61, 216, 198, 0.4);
+  background: rgba(61, 216, 198, 0.1);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.availability-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(61, 216, 198, 0.6);
+  animation: availability-pulse 2.4s ease-out infinite;
+}
+
+@keyframes availability-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(61, 216, 198, 0.6);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 0.5rem rgba(61, 216, 198, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availability-dot {
+    animation: none;
+  }
 }
 
 .career-goal {
@@ -1382,6 +1436,17 @@ p {
 .footer-links a:hover,
 .footer-resume-link:hover {
   color: #84fff0;
+}
+
+.footer-cta {
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.footer-cta a {
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .footer-meta {

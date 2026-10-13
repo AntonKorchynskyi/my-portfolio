@@ -11,6 +11,12 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-content">
+        <p className="footer-cta">
+          {config.availability}.{" "}
+          <a href="#contact" data-track="contact/footer">
+            Get in touch →
+          </a>
+        </p>
         <div className="footer-links">
           <a href={config.github} target="_blank" rel="noreferrer" aria-label="GitHub" data-track="github/footer">
             GitHub

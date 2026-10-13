@@ -47,32 +47,34 @@ const Overview = () => {
     >
       <div className="overview-hero">
         <div className="overview-content">
-          <p className="section-kicker">Overview</p>
+          <p className="availability-badge">
+            <span className="availability-dot" aria-hidden="true" />
+            {config.availability}
+          </p>
           <h1 id="overview-title">
             Hello, I'm <span className="highlight">Anton</span> and I build
             accessible production-ready web applications.
           </h1>
           <p>
-            Full-stack developer who thrives in collaborative teams. I bring
-            production-proven experience across the full web stack and a genuine
-            commitment to building software that works for everyone.
+            Full-stack developer who spent nearly two years at the Ontario Public
+            Service building accessible React and Next.js interfaces, Python
+            APIs, and Azure cloud services for provincial digital services. I
+            care about software that works for everyone.
           </p>
           <div className="overview-ctas">
             <button
               className="cta-button cta-primary"
-              onClick={handleResumeDownload}
-              aria-label="Download resume"
-              data-track="resume/hero"
+              onClick={() => scrollToSection("contact")}
+              data-track="contact/hero"
             >
-              Download My Resume
+              Get in touch
             </button>
             <button
               className="cta-button cta-secondary"
-              onClick={() => scrollToSection("projects")}
-              aria-label="View projects"
-              data-track="see-work/hero"
+              onClick={handleResumeDownload}
+              data-track="resume/hero"
             >
-              See My Work
+              Download resume
             </button>
           </div>
         </div>
