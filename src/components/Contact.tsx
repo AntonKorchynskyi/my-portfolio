@@ -114,13 +114,14 @@ const Contact = () => {
 
         <div className="contact-direct">
           <h3>Prefer to reach out directly?</h3>
+          <p className="contact-email">{config.email}</p>
           <button
             type="button"
             className="cta-button cta-secondary"
             onClick={handleCopyEmail}
             data-track="copy-email/contact"
           >
-            {copied ? "Email copied!" : `Copy email: ${config.email}`}
+            {copied ? "Email copied!" : "Copy email address"}
           </button>
           <span className="visually-hidden" aria-live="polite">
             {copied ? "Email address copied to clipboard" : ""}

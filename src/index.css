@@ -60,6 +60,13 @@ main {
   gap: 1.15rem;
 }
 
+/* Grid items default to min-width: auto, so the non-wrapping skills tab row
+   stretched the whole page past the viewport on phones. */
+#root > *,
+main > * {
+  min-width: 0;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -1349,6 +1356,11 @@ p {
 .contact-direct .cta-button {
   width: 100%;
   text-align: center;
+}
+
+.contact-email {
+  margin: 0;
+  color: var(--text);
   overflow-wrap: anywhere;
 }
 
