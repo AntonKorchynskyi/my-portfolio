@@ -18,86 +18,50 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Chart Lab",
+    description:
+      "A full-stack playground that renders the same revenue datasets with six charting libraries (Chart.js, Recharts, Nivo, ECharts, D3, and Observable Plot) so they can be compared side by side. The React and TypeScript frontend is served by a FastAPI and PostgreSQL backend running in Docker.",
+    stack: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
+    image: chartLab,
+    githubUrl: "https://github.com/AntonKorchynskyi/chart-lab",
+  },
+  {
     title: "BoardVerse",
     description:
-      "BoardVerse is a web platform for discovering and playing board games online, featuring user accounts, player profiles with stats, and real-time multiplayer Tic-Tac-Toe. Built with Next.js, Tailwind CSS, and boardgame.io.",
-    stack: [
-      "Next.js",
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML",
-      "Python (Flask)",
-    ],
+      "A web platform for discovering and playing board games online, with user accounts and player profiles that track stats. Includes real-time multiplayer Tic-Tac-Toe built on boardgame.io.",
+    stack: ["Next.js", "React", "Tailwind CSS", "boardgame.io", "Python (Flask)"],
     image: boardverse,
     githubUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
   },
   {
     title: "SoundHouseFun",
     description:
-      "A full-stack e-commerce music store featuring Stripe payment integration, Google authentication, an admin dashboard for content management, and an MS SQL database backend, built with ASP.NET and C#.",
-    stack: [
-      "ASP.NET",
-      "C#",
-      "MS SQL",
-      "Stripe API",
-      "Bootstrap",
-      "Google oAuth",
-    ],
+      "A full-stack e-commerce music store with Stripe payments, Google sign-in, and an admin dashboard for managing content. Built with ASP.NET and C# on an MS SQL database.",
+    stack: ["ASP.NET", "C#", "MS SQL", "Stripe API", "Google OAuth"],
     image: soundHouseFunIMage,
     githubUrl: "https://github.com/AntonKorchynskyi/SoundHouseFun_ASPNET",
   },
   {
-    title: "No Addict",
-    description:
-      "No Addict is a lightweight Chrome extension that helps users reduce digital distraction by blocking access to selected websites. Users can add domains or specific URLs they want to avoid, enable or disable blocking as needed, and automatically prevent those pages from loading by clearing their content.",
-    stack: ["JavaScript", "HTML", "CSS", "Google Chrome"],
-    image: noAddict,
-    githubUrl: "https://github.com/AntonKorchynskyi/no-addict",
-  },
-  {
-    title: "Chart Lab",
-
-    description:
-      "Chart Lab is a full-stack data visualization playground for comparing charting libraries by rendering the same revenue datasets with Chart.js, Recharts, Nivo, ECharts, D3, and Observable Plot.",
-
-    stack: [
-      "React",
-      "TypeScript",
-      "FastAPI",
-      "PostgreSQL",
-      "Docker",
-      "Chart.js",
-      "Recharts",
-      "Nivo",
-      "ECharts",
-      "D3",
-      "Observable Plot",
-    ],
-    image: chartLab,
-    githubUrl: "https://github.com/AntonKorchynskyi/chart-lab",
-  },
-  {
     title: "MovieNest",
     description:
-      "Android movie discovery app with Firebase authentication and cloud favorites, enabling users to search OMDb titles, view rich details, and manage personalized watchlists through an MVVM architecture and RecyclerView interface.",
-    stack: [
-      "Java",
-      "Android SDK",
-      "MVVM",
-      "Firebase Authentication",
-      "Firebase Firestore",
-      "OMDb API",
-      "Gradle",
-    ],
+      "An Android app for searching OMDb movie titles, viewing rich details, and keeping a personal watchlist. Firebase Authentication and Firestore sync favorites to the cloud, on an MVVM architecture.",
+    stack: ["Java", "Android SDK", "MVVM", "Firebase", "OMDb API"],
     image: movieNest,
     githubUrl: "https://github.com/AntonKorchynskyi/MovieNest",
   },
   {
+    title: "No Addict",
+    description:
+      "A lightweight Chrome extension that blocks distracting websites by domain or specific URL. Blocking can be switched on and off, and blocked pages are cleared before they load.",
+    stack: ["JavaScript", "HTML", "CSS", "Chrome Extensions"],
+    image: noAddict,
+    githubUrl: "https://github.com/AntonKorchynskyi/no-addict",
+  },
+  {
     title: "MailSheet Automator",
     description:
-      "Python automation tool that processes Excel spreadsheets to validate and generate standardized email addresses, then automatically sends bulk HTML emails through Microsoft Outlook. Built using openpyxl, PyInputPlus, and the Outlook COM API.",
-    stack: ["Python", "openpyxl", "PyInputPlus", "pywin32 (Outlook COM API)"],
+      "A Python tool that validates Excel spreadsheet data and generates standardized email addresses from it. It then sends bulk HTML emails through Microsoft Outlook automatically.",
+    stack: ["Python", "openpyxl", "PyInputPlus", "Outlook COM API"],
     image: mailSheet,
     githubUrl: "https://github.com/AntonKorchynskyi/MailSheet-Automator",
   },
@@ -126,7 +90,7 @@ const Projects = () => {
   return (
     <section className="section" id="projects">
       <p className="section-kicker">Projects</p>
-      <h2>Web Projects</h2>
+      <h2>Selected Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div className="project-card" key={project.title}>
