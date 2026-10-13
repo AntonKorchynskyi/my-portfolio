@@ -118,6 +118,7 @@ const WorkExp = () => {
           isExpanded ? "Hide detailed project timeline" : "View detailed project timeline"
         }
         onClick={() => setIsExpanded((prev) => !prev)}
+        data-track="experience-details"
       >
         {isExpanded ? "Hide Project Details ▲" : "View Project Details ▼"}
       </button>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toSlug } from "../utils/analytics";
 
 import accessibilityIcon from "../assets/skills/accessibility.png";
 import angularIcon from "../assets/skills/angular.svg";
@@ -166,6 +167,7 @@ const Skills = () => {
                 className={`skills-category-tab ${selectedCategory === category ? "skills-category-tab--active" : ""}`}
                 onClick={() => setSelectedCategory(category)}
                 aria-pressed={selectedCategory === category}
+                data-track={`skills-tab/${toSlug(category)}`}
               >
                 {category}
               </button>

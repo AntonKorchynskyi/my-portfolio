@@ -62,13 +62,15 @@ const Overview = () => {
               className="cta-button cta-primary"
               onClick={handleResumeDownload}
               aria-label="Download resume"
+              data-track="resume/hero"
             >
-              View My Resume
+              Download My Resume
             </button>
             <button
               className="cta-button cta-secondary"
               onClick={() => scrollToSection("projects")}
               aria-label="View projects"
+              data-track="see-work/hero"
             >
               See My Work
             </button>
@@ -88,6 +90,7 @@ const Overview = () => {
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noreferrer" : undefined}
             aria-label={link.label}
+            data-track={`${link.label.toLowerCase()}/hero`}
           >
             <span aria-hidden="true" className="overview-link-icon">
               {link.type === "svg" ? (

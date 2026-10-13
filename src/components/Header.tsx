@@ -25,14 +25,19 @@ const Header = () => {
         </a>
         <nav aria-label="Primary navigation" className="main-links">
           {navItems.map((item) => (
-            <a href={item.href} key={item.href}>
+            <a
+              href={item.href}
+              key={item.href}
+              data-track={`nav/${item.href.slice(1)}`}
+            >
               {item.label}
             </a>
           ))}
-          <button 
-            className="header-resume-btn" 
+          <button
+            className="header-resume-btn"
             onClick={handleResumeDownload}
             aria-label="Download resume"
+            data-track="resume/header"
           >
             Resume
           </button>

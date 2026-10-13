@@ -4,6 +4,7 @@ import noAddict from "../assets/projects/no-addict.png";
 import mailSheet from "../assets/projects/mailsheet.png";
 import movieNest from "../assets/projects/movienest.png";
 import chartLab from "../assets/projects/chartlab.png";
+import { toSlug } from "../utils/analytics";
 
 interface Project {
   title: string;
@@ -155,6 +156,7 @@ const Projects = () => {
                     rel="noreferrer"
                     className="project-link"
                     aria-label={`View live demo for ${project.title}`}
+                    data-track={`demo/${toSlug(project.title)}`}
                   >
                     View Live Demo
                     <ExternalLinkIcon />
@@ -166,6 +168,7 @@ const Projects = () => {
                   rel="noreferrer"
                   className="project-link"
                   aria-label={`View source code for ${project.title}`}
+                  data-track={`code/${toSlug(project.title)}`}
                 >
                   View Source Code
                   <ExternalLinkIcon />

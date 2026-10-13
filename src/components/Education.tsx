@@ -217,6 +217,7 @@ const Education = () => {
             className="edu-button"
             onClick={() => setIsModalOpen(true)}
             ref={courseworkButtonRef}
+            data-track="coursework"
           >
             <span>View coursework</span>
             <svg

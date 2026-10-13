@@ -1,3 +1,5 @@
+import { toSlug } from "../utils/analytics";
+
 interface Cert {
   title: string;
   issuer: string;
@@ -90,6 +92,7 @@ const Certs = () => {
               rel="noopener noreferrer"
               className="cert-card__cta"
               aria-label={`View credential for ${cert.title}`}
+              data-track={`credential/${toSlug(cert.title)}`}
             >
               View credential
               <ExternalLinkIcon />

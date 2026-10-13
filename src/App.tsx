@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import About from "./components/About";
 import Certs from "./components/Certs";
@@ -8,8 +9,11 @@ import Overview from "./components/Overview";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExp from "./components/WorkExp";
+import { startEngagementTracking } from "./utils/analytics";
 
 function App() {
+  useEffect(() => startEngagementTracking(), []);
+
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -18,10 +22,10 @@ function App() {
       <Header />
       <main id="main-content">
         <Overview />
-        <About />
-        <Skills />
-        <WorkExp />
         <Projects />
+        <About />
+        <WorkExp />
+        <Skills />
         <Education />
         <Certs />
       </main>
