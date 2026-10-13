@@ -1089,6 +1089,19 @@ p {
   line-height: 1.4;
 }
 
+.workexp-role-dates {
+  margin-top: -0.75rem;
+  font-size: 0.9rem;
+}
+
+.timeline-highlights {
+  margin: 0 0 0.5rem;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
 .workexp-content {
   border-radius: 12px;
 }
