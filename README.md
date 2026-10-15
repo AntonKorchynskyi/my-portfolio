@@ -2,26 +2,22 @@
 
 Portfolio website showcasing my development projects and skills.
 
-Built with React, TypeScript, and Vite.
+Built with React, TypeScript, Vite and Motion, in plain CSS. Light and dark themes, WCAG 2.2 AA.
 
-## Description
+## Sections
 
-- **Hero Section**: An introduction
-- **About Me**: My story
-- **Projects**: My projects
-- **Skills**: Categorized technical skills
-- **Work Experience**: Timeline of professional projects
-- **Resume Download**: Easy access to resume PDF from multiple locations
-- **Footer**: Social links and site information
+In page order: Hero, Projects, About, Experience, Skills, Education (with a coursework dialog), Certifications, Contact, Footer.
 
-## Contact form
+## Styling
 
-The Contact section sends messages through [Web3Forms](https://web3forms.com) (free, no backend). Get an access key by entering your email on their site, then set it:
+- Design tokens (colours for both themes, type sizes, spacing, radii, durations) live in `src/styles/tokens.css`. Change them there, not in component CSS.
+- Shared patterns (section layout, buttons, tags, bullets) are in `src/styles/base.css`; each component has its own CSS file next to it.
+- Breakpoints: 1100px, 900px (menu button, one column), 700px and 600px (phones).
+- Animations respect `prefers-reduced-motion`.
 
-- locally in `.env.local`: `VITE_WEB3FORMS_KEY=your-access-key`
-- on Vercel: Project Settings → Environment Variables → `VITE_WEB3FORMS_KEY`, then redeploy
+## Projects
 
-Without the key the form is hidden, and the section only shows the copy-email, LinkedIn and resume options.
+Project cards are data in `src/components/Projects.tsx`. Add `demoUrl` to a project to show its "Live demo" button, and an `image` (600px and 1200px WebP) to replace the placeholder.
 
 ## Analytics
 
@@ -30,7 +26,6 @@ Vercel Web Analytics (Hobby plan) is enabled. Hobby has no custom events, so eng
 - `/reached/<section-id>`: the section stayed in view for at least 1 second (`/reached/end` = footer)
 - `/time/10s`, `/time/30s`, `/time/60s`, `/time/120s`: visible time on the page
 - `/click/<name>`: a click on any element with a `data-track` attribute
-- `/sent/contact`: a contact form message was delivered (the main conversion metric)
 - `/from/<source>`: a visit that arrived through a tagged link
 
 Tag links you share with `?ref=`, e.g. `https://anton-korchynskyi-portfolio.vercel.app/?ref=linkedin`. Use one tag per job application (`?ref=acme`) to see whether that company opened the site.
