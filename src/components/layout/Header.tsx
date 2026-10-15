@@ -1,7 +1,7 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
-import { config } from "../config";
-import { DownloadIcon, MenuIcon, CloseIcon, MoonIcon, SunIcon } from "./Icons";
+import { config } from "../../config";
+import { DownloadIcon, MenuIcon, CloseIcon, MoonIcon, SunIcon } from "../ui/Icons";
 import "./Header.css";
 
 const navItems = [

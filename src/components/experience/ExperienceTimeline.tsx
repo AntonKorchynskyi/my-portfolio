@@ -1,7 +1,7 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
-import Reveal from "./Reveal";
-import SpotlightCard from "./SpotlightCard";
+import Reveal from "../ui/Reveal";
+import SpotlightCard from "../ui/SpotlightCard";
 import "./ExperienceTimeline.css";
 
 interface ExperienceProject {

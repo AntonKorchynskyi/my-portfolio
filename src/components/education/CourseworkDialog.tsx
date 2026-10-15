@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import type { MouseEvent, RefObject } from "react";
-import { CloseIcon } from "./Icons";
+import { CloseIcon } from "../ui/Icons";
 import "./CourseworkDialog.css";
 
 interface Course {

@@ -1,7 +1,7 @@
 import { AnimatePresence } from "motion/react";
 import { useCallback, useRef, useState } from "react";
 import CourseworkDialog from "./CourseworkDialog";
-import { WindowIcon } from "./Icons";
+import { WindowIcon } from "../ui/Icons";
 import "./Education.css";
 
 const Education = () => {

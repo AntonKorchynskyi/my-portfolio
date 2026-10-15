@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "./Icons";
+import { ArrowUpRightIcon } from "../ui/Icons";
 import "./Certs.css";
 
 const credlyCerts = [

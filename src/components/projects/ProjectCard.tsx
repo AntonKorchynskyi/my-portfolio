@@ -1,4 +1,4 @@
-import SpotlightCard from "./SpotlightCard";
+import SpotlightCard from "../ui/SpotlightCard";
 import "./ProjectCard.css";
 
 export interface ProjectImage {

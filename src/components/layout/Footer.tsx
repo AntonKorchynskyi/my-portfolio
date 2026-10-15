@@ -1,5 +1,5 @@
-import { config } from "../config";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
+import { config } from "../../config";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "../ui/Icons";
 import "./Footer.css";
 
 const Footer = () => {

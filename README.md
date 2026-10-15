@@ -12,12 +12,13 @@ In page order: Hero, Projects, About, Experience, Skills, Education (with a cour
 
 - Design tokens (colours for both themes, type sizes, spacing, radii, durations) live in `src/styles/tokens.css`. Change them there, not in component CSS.
 - Shared patterns (section layout, buttons, tags, bullets) are in `src/styles/base.css`; each component has its own CSS file next to it.
+- Components are grouped in `src/components/`: `layout/` (header, footer), `ui/` (icons and shared helpers), and one folder per page section (`hero/`, `projects/`, `about/`, `experience/`, `skills/`, `education/`, `certifications/`, `contact/`).
 - Breakpoints: 1100px, 900px (menu button, one column), 700px and 600px (phones).
 - Animations respect `prefers-reduced-motion`.
 
 ## Projects
 
-Project cards are data in `src/components/Projects.tsx`. Add `demoUrl` to a project to show its "Live demo" button, and an `image` (600px and 1200px WebP) to replace the placeholder.
+Project cards are data in `src/components/projects/Projects.tsx`. Add `demoUrl` to a project to show its "Live demo" button, and an `image` (600px and 1200px WebP) to replace the placeholder.
 
 ## Analytics
 

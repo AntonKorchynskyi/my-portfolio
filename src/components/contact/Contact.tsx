@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { config } from "../config";
-import { CheckIcon, CopyIcon, DownloadIcon } from "./Icons";
+import { config } from "../../config";
+import { CheckIcon, CopyIcon, DownloadIcon } from "../ui/Icons";
 import "./Contact.css";
 
 const COPIED_RESET_MS = 2500;

@@ -1,14 +1,14 @@
-import { config } from "../config";
-import boardverse600 from "../assets/img/boardverse-600.webp";
-import boardverse1200 from "../assets/img/boardverse-1200.webp";
-import soundhousefun600 from "../assets/img/soundhousefun-600.webp";
-import soundhousefun1200 from "../assets/img/soundhousefun-1200.webp";
-import { ArrowUpRightIcon } from "./Icons";
+import { config } from "../../config";
+import boardverse600 from "../../assets/img/boardverse-600.webp";
+import boardverse1200 from "../../assets/img/boardverse-1200.webp";
+import soundhousefun600 from "../../assets/img/soundhousefun-600.webp";
+import soundhousefun1200 from "../../assets/img/soundhousefun-1200.webp";
+import { ArrowUpRightIcon } from "../ui/Icons";
 import ProjectCard from "./ProjectCard";
 import type { Project } from "./ProjectCard";
 import ProjectList from "./ProjectList";
 import type { ListedProject } from "./ProjectList";
-import Reveal from "./Reveal";
+import Reveal from "../ui/Reveal";
 import "./Projects.css";
 
 // Add a demoUrl to show the "Live demo" button on a card.

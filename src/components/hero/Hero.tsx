@@ -1,6 +1,6 @@
-import { config } from "../config";
-import photo400 from "../assets/img/anton-400.webp";
-import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
+import { config } from "../../config";
+import photo400 from "../../assets/img/anton-400.webp";
+import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "../ui/Icons";
 import "./Hero.css";
 
 const Hero = () => {
