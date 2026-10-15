@@ -1,147 +1,125 @@
-import soundHouseFunIMage from "../assets/projects/SoundHouseFun2.png";
-import boardverse from "../assets/projects/boardverse2.png";
-import noAddict from "../assets/projects/no-addict.png";
-import mailSheet from "../assets/projects/mailsheet.png";
-import movieNest from "../assets/projects/movienest.png";
-import chartLab from "../assets/projects/chartlab.png";
-import { toSlug } from "../utils/analytics";
+import { config } from "../config";
+import boardverse600 from "../assets/img/boardverse-600.webp";
+import boardverse1200 from "../assets/img/boardverse-1200.webp";
+import soundhousefun600 from "../assets/img/soundhousefun-600.webp";
+import soundhousefun1200 from "../assets/img/soundhousefun-1200.webp";
+import { ArrowUpRightIcon } from "./Icons";
+import ProjectCard from "./ProjectCard";
+import type { Project } from "./ProjectCard";
+import ProjectList from "./ProjectList";
+import type { ListedProject } from "./ProjectList";
+import Reveal from "./Reveal";
+import "./Projects.css";
 
-interface Project {
-  title: string;
-  description: string;
-  stack: string[];
-  image: string;
-  githubUrl: string;
-  demoUrl?: string;
-  metrics?: string;
-}
+// Add a demoUrl to show the "Live demo" button on a card.
+const featured: Project = {
+  slug: "plotlineai",
+  title: "PlotlineAI",
+  problem: "Turning a raw CSV into the right chart usually means guessing which chart fits the data.",
+  built:
+    "Upload a CSV and an AI agent suggests the best charts, rendered from the real data. A Next.js frontend and a Spring Boot API on Java 25, with DynamoDB and S3, deployed serverless on AWS with CDK.",
+  tags: ["Next.js", "Spring Boot", "TypeScript", "AWS CDK", "DynamoDB"],
+  codeUrl: "https://github.com/AntonKorchynskyi/plotlineai",
+};
 
-const projects: Project[] = [
+const pair: Project[] = [
   {
-    title: "Chart Lab",
-    description:
-      "A full-stack playground that renders the same revenue datasets with six charting libraries (Chart.js, Recharts, Nivo, ECharts, D3, and Observable Plot) so they can be compared side by side. The React and TypeScript frontend is served by a FastAPI and PostgreSQL backend running in Docker.",
-    stack: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
-    image: chartLab,
-    githubUrl: "https://github.com/AntonKorchynskyi/chart-lab",
-  },
-  {
-    title: "BoardVerse",
-    description:
-      "A web platform for discovering and playing board games online, with user accounts and player profiles that track stats. Includes real-time multiplayer Tic-Tac-Toe built on boardgame.io.",
-    stack: ["Next.js", "React", "Tailwind CSS", "boardgame.io", "Python (Flask)"],
-    image: boardverse,
-    githubUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
-  },
-  {
+    slug: "soundhousefun",
     title: "SoundHouseFun",
-    description:
-      "A full-stack e-commerce music store with Stripe payments, Google sign-in, and an admin dashboard for managing content. Built with ASP.NET and C# on an MS SQL database.",
-    stack: ["ASP.NET", "C#", "MS SQL", "Stripe API", "Google OAuth"],
-    image: soundHouseFunIMage,
-    githubUrl: "https://github.com/AntonKorchynskyi/SoundHouseFun_ASPNET",
+    problem:
+      "A music store that needs checkout, sign-in and content management a small team can run.",
+    built:
+      "Full-stack e-commerce with Stripe payments, Google sign-in and an admin dashboard, on ASP.NET, C# and MS SQL.",
+    tags: ["ASP.NET", "C#", "MS SQL", "Stripe", "Google OAuth"],
+    codeUrl: "https://github.com/AntonKorchynskyi/SoundHouseFun_ASPNET",
+    image: {
+      src600: soundhousefun600,
+      src1200: soundhousefun1200,
+      alt: "SoundHouseFun, an online music store",
+    },
   },
   {
-    title: "MovieNest",
-    description:
-      "An Android app for searching OMDb movie titles, viewing rich details, and keeping a personal watchlist. Firebase Authentication and Firestore sync favorites to the cloud, on an MVVM architecture.",
-    stack: ["Java", "Android SDK", "MVVM", "Firebase", "OMDb API"],
-    image: movieNest,
-    githubUrl: "https://github.com/AntonKorchynskyi/MovieNest",
+    slug: "boardverse",
+    title: "BoardVerse",
+    problem: "Playing board games with friends online, with stats that follow you between games.",
+    built:
+      "Accounts, player profiles that track stats, and real-time multiplayer Tic-Tac-Toe on boardgame.io, backed by a Flask API.",
+    tags: ["Next.js", "React", "Tailwind CSS", "boardgame.io", "Flask"],
+    codeUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
+    image: {
+      src600: boardverse600,
+      src1200: boardverse1200,
+      alt: "BoardVerse, an online board game platform",
+    },
+  },
+];
+
+const moreProjects: ListedProject[] = [
+  {
+    slug: "chart-lab",
+    name: "Chart Lab",
+    description: "Renders the same revenue datasets in six charting libraries side by side.",
+    stack: ["React", "TypeScript", "FastAPI"],
+    codeUrl: "https://github.com/AntonKorchynskyi/chart-lab",
   },
   {
-    title: "No Addict",
-    description:
-      "A lightweight Chrome extension that blocks distracting websites by domain or specific URL. Blocking can be switched on and off, and blocked pages are cleared before they load.",
-    stack: ["JavaScript", "HTML", "CSS", "Chrome Extensions"],
-    image: noAddict,
-    githubUrl: "https://github.com/AntonKorchynskyi/no-addict",
+    slug: "movienest",
+    name: "MovieNest",
+    description: "Android app for searching OMDb titles, with a watchlist synced through Firebase.",
+    stack: ["Java", "Android", "Firebase"],
+    codeUrl: "https://github.com/AntonKorchynskyi/MovieNest",
   },
   {
-    title: "MailSheet Automator",
-    description:
-      "A Python tool that validates Excel spreadsheet data and generates standardized email addresses from it. It then sends bulk HTML emails through Microsoft Outlook automatically.",
-    stack: ["Python", "openpyxl", "PyInputPlus", "Outlook COM API"],
-    image: mailSheet,
-    githubUrl: "https://github.com/AntonKorchynskyi/MailSheet-Automator",
+    slug: "no-addict",
+    name: "No Addict",
+    description: "Chrome extension that blocks distracting sites by domain or URL before they load.",
+    stack: ["JavaScript", "Chrome Extensions"],
+    codeUrl: "https://github.com/AntonKorchynskyi/no-addict",
+  },
+  {
+    slug: "mailsheet-automator",
+    name: "MailSheet Automator",
+    description: "Python tool that validates Excel data and sends bulk HTML emails through Outlook.",
+    stack: ["Python", "openpyxl", "Outlook COM"],
+    codeUrl: "https://github.com/AntonKorchynskyi/MailSheet-Automator",
   },
 ];
 
 const Projects = () => {
-  const ExternalLinkIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <polyline points="15 3 21 3 21 9" />
-      <line x1="10" y1="14" x2="21" y2="3" />
-    </svg>
-  );
-
   return (
-    <section className="section" id="projects">
-      <p className="section-kicker">Projects</p>
-      <h2>Selected Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <div className="project-card" key={project.title}>
-            <img
-              alt={`${project.title} preview`}
-              loading="lazy"
-              src={project.image}
-              className="project-image"
-            />
-            <div className="project-card-body">
-              <h3>{project.title}</h3>
-              <div className="project-stack-badges">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="stack-badge">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+    <section id="projects" className="sec" aria-labelledby="projects-title">
+      <div className="sec-rule projects-head">
+        <div>
+          <p className="kicker">01 · Projects</p>
+          <h2 id="projects-title" className="h2">
+            Selected projects
+          </h2>
+        </div>
+        <a
+          className="link-btn"
+          href={config.github}
+          target="_blank"
+          rel="noreferrer"
+          data-track="github/projects"
+        >
+          All projects on GitHub
+          <ArrowUpRightIcon />
+        </a>
+      </div>
 
-              <p className="project-summary">{project.description}</p>
+      <Reveal className="projects-featured">
+        <ProjectCard project={featured} featured />
+      </Reveal>
 
-              <div className="project-links">
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link"
-                    aria-label={`View live demo for ${project.title}`}
-                    data-track={`demo/${toSlug(project.title)}`}
-                  >
-                    View Live Demo
-                    <ExternalLinkIcon />
-                  </a>
-                )}
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link"
-                  aria-label={`View source code for ${project.title}`}
-                  data-track={`code/${toSlug(project.title)}`}
-                >
-                  View Source Code
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-          </div>
+      <div className="projects-pair">
+        {pair.map((project, index) => (
+          <Reveal key={project.slug} delay={0.06 * (index + 1)}>
+            <ProjectCard project={project} />
+          </Reveal>
         ))}
       </div>
+
+      <ProjectList projects={moreProjects} />
     </section>
   );
 };

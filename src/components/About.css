@@ -1,0 +1,38 @@
+.about-body {
+  max-width: 680px;
+}
+
+.about-body p {
+  margin: 16px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.about-body .about-lead {
+  margin: 0 0 20px;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.about-seeking {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.about-body .about-seeking-label {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.about-body .about-seeking-text {
+  margin: 8px 0 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+}

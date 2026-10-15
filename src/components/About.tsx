@@ -1,39 +1,38 @@
+import Reveal from "./Reveal";
+import "./About.css";
+
 const About = () => {
   return (
-    <section className="section" id="about">
-      <p className="section-kicker">About Me</p>
-      <h2>Who I Am</h2>
-      <div className="about-content">
-        <p>
-          My journey into software development began at Georgian College, where
-          I discovered a strong interest in building reliable web applications
-          and digital services. Through academic projects and hands-on work with
-          the Ontario Public Service, I gained experience developing production
-          systems that support real users across the province.
-        </p>
-        <p>
-          At OPS, I contributed to multiple digital modernization initiatives,
-          including the Business Experience Platform and ServiceOntario
-          integrations. My work focused on building accessible React and Next.js
-          interfaces aligned with WCAG standards, integrating APIs, and
-          supporting cloud-based services deployed through modern DevOps
-          workflows.
-        </p>
-        <p>
-          I enjoy working across the full web stack, combining frontend
-          engineering, backend APIs, and cloud infrastructure to deliver
-          practical solutions. Accessibility, usability, and maintainability are
-          central to how I approach development, especially when building
-          systems used by large and diverse audiences.
-        </p>
-        <p className="career-goal">
-          <strong>What I'm seeking:</strong>{" "}
-          <span>
-            Full-Stack or Frontend Developer roles where I can contribute to
-            building reliable, accessible, and well-designed digital products
-            within collaborative teams.
-          </span>
-        </p>
+    <section id="about" className="sec" aria-labelledby="about-title">
+      <div className="sec-rule split">
+        <div>
+          <p className="kicker">02 · About</p>
+          <h2 id="about-title" className="h2">
+            A bit about me
+          </h2>
+        </div>
+        <Reveal className="about-body">
+          <p className="about-lead">
+            I got into software at Georgian College, where building things real people use
+            quickly became the part I cared about most.
+          </p>
+          <p>
+            At the Ontario Public Service I spent around two years on digital services used
+            across the province. Working to WCAG and AODA standards taught me that a feature is
+            only done when it works with a keyboard and a screen reader too.
+          </p>
+          <p>
+            Outside work I keep building, from a charting playground to a Chrome extension,
+            mostly to learn something new each time.
+          </p>
+          <div className="about-seeking">
+            <p className="about-seeking-label mono">What I'm looking for</p>
+            <p className="about-seeking-text">
+              A Full-Stack or Frontend role, remote or hybrid, on a team that solves tough
+              technical challenges and ships well-built products.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
