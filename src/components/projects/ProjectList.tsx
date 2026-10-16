@@ -1,3 +1,4 @@
+import { GitHubIcon } from "../ui/Icons";
 import "./ProjectList.css";
 
 export interface ListedProject {
@@ -30,6 +31,7 @@ const ProjectList = ({ projects }: ProjectListProps) => {
               rel="noreferrer"
               data-track={`code/${project.slug}`}
             >
+              <GitHubIcon size={16} />
               Code<span className="sr-only"> for {project.name}</span>
             </a>
           </li>

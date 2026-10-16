@@ -18,7 +18,7 @@ In page order: Hero, Projects, About, Experience, Skills, Education (with a cour
 
 ## Projects
 
-Project cards are data in `src/components/projects/Projects.tsx`. Add `demoUrl` to a project to show its "Live demo" button, and an `image` (600px and 1200px WebP) to replace the placeholder.
+Project cards are data in `src/components/projects/Projects.tsx`. Add `liveUrl` to a project to show its "Live" button, and an `image` (600px and 1200px WebP) to replace the placeholder.
 
 ## Analytics
 

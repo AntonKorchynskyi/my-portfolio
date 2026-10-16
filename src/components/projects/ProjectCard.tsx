@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon, GitHubIcon } from "../ui/Icons";
 import SpotlightCard from "../ui/SpotlightCard";
 import "./ProjectCard.css";
 
@@ -14,7 +15,8 @@ export interface Project {
   built: string;
   tags: string[];
   codeUrl: string;
-  demoUrl?: string;
+  // When set, a "Live" button links to the running site.
+  liveUrl?: string;
   // Without an image the frame shows a placeholder tile with the title and tags.
   image?: ProjectImage;
 }
@@ -73,17 +75,6 @@ const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
             ))}
           </ul>
           <div className="project-actions">
-            {project.demoUrl && (
-              <a
-                className="btn btn-primary btn-small"
-                href={project.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                data-track={`demo/${project.slug}`}
-              >
-                Live demo<span className="sr-only"> of {project.title}</span>
-              </a>
-            )}
             <a
               className="link-btn"
               href={project.codeUrl}
@@ -91,8 +82,21 @@ const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
               rel="noreferrer"
               data-track={`code/${project.slug}`}
             >
+              <GitHubIcon size={16} />
               Code<span className="sr-only"> for {project.title}</span>
             </a>
+            {project.liveUrl && (
+              <a
+                className="btn btn-primary btn-small"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                data-track={`demo/${project.slug}`}
+              >
+                Live<span className="sr-only"> site for {project.title}</span>
+                <ArrowUpRightIcon />
+              </a>
+            )}
           </div>
         </div>
       </article>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { config } from "../../config";
-import { CheckIcon, CopyIcon, DownloadIcon } from "../ui/Icons";
+import { CheckIcon, CopyIcon, DownloadIcon, LinkedInIcon } from "../ui/Icons";
 import "./Contact.css";
 
 const COPIED_RESET_MS = 2500;
@@ -65,6 +65,7 @@ const Contact = () => {
               rel="noreferrer"
               data-track="linkedin/contact"
             >
+              <LinkedInIcon size={16} />
               LinkedIn
             </a>
             <a

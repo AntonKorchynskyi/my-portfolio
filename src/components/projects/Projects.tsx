@@ -11,7 +11,7 @@ import type { ListedProject } from "./ProjectList";
 import Reveal from "../ui/Reveal";
 import "./Projects.css";
 
-// Add a demoUrl to show the "Live demo" button on a card.
+// Add a liveUrl to show the "Live" button on a card.
 const featured: Project = {
   slug: "plotlineai",
   title: "PlotlineAI",
@@ -20,6 +20,7 @@ const featured: Project = {
     "Upload a CSV and an AI agent suggests the best charts, rendered from the real data. A Next.js frontend and a Spring Boot API on Java 25, with DynamoDB and S3, deployed serverless on AWS with CDK.",
   tags: ["Next.js", "Spring Boot", "TypeScript", "AWS CDK", "DynamoDB"],
   codeUrl: "https://github.com/AntonKorchynskyi/plotlineai",
+  // No public URL yet; add liveUrl here once it is deployed publicly.
 };
 
 const pair: Project[] = [
@@ -46,6 +47,7 @@ const pair: Project[] = [
       "Accounts, player profiles that track stats, and real-time multiplayer Tic-Tac-Toe on boardgame.io, backed by a Flask API.",
     tags: ["Next.js", "React", "Tailwind CSS", "boardgame.io", "Flask"],
     codeUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
+    liveUrl: "https://boardverse.vercel.app",
     image: {
       src600: boardverse600,
       src1200: boardverse1200,
@@ -61,6 +63,14 @@ const moreProjects: ListedProject[] = [
     description: "Renders the same revenue datasets in six charting libraries side by side.",
     stack: ["React", "TypeScript", "FastAPI"],
     codeUrl: "https://github.com/AntonKorchynskyi/chart-lab",
+  },
+  {
+    slug: "booklog-api",
+    name: "BookLog API",
+    description:
+      "REST API for managing a book list, with filtered queries and recommendations based on what's on it.",
+    stack: ["Node.js", "Express", "MongoDB"],
+    codeUrl: "https://github.com/AntonKorchynskyi/BooklogAPI",
   },
   {
     slug: "movienest",
