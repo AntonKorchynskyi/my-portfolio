@@ -53,3 +53,13 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1600px) {
+  .footer-inner > p {
+    font-size: 14px;
+  }
+
+  .footer-nav .social {
+    font-size: 15px;
+  }
+}

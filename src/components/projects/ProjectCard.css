@@ -204,3 +204,26 @@
     padding: 14px;
   }
 }
+
+@media (min-width: 1600px) {
+  .project-title {
+    font-size: 28px;
+  }
+
+  .is-featured .project-title {
+    font-size: 36px;
+  }
+
+  .project-problem {
+    font-size: 19px;
+  }
+
+  .project-built {
+    font-size: 18px;
+  }
+
+  .project-frame-url,
+  .is-featured .project-frame-url {
+    font-size: 13px;
+  }
+}

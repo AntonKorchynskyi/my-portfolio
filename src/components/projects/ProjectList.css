@@ -63,3 +63,17 @@
     align-self: start;
   }
 }
+
+@media (min-width: 1600px) {
+  .project-list-title {
+    font-size: 24px;
+  }
+
+  .project-list-desc {
+    font-size: 18px;
+  }
+
+  .project-list-stack {
+    font-size: 13.5px;
+  }
+}

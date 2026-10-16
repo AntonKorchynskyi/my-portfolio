@@ -16,3 +16,17 @@
   letter-spacing: -0.01em;
   color: var(--ink);
 }
+
+@media (min-width: 1600px) {
+  .about-body {
+    max-width: 800px;
+  }
+
+  .about-body p {
+    font-size: 19px;
+  }
+
+  .about-body .about-lead {
+    font-size: 26px;
+  }
+}

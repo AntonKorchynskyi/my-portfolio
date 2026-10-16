@@ -164,3 +164,13 @@
     display: none;
   }
 }
+
+@media (min-width: 1600px) {
+  .header-brand {
+    font-size: 17px;
+  }
+
+  .header-link {
+    font-size: 16px;
+  }
+}

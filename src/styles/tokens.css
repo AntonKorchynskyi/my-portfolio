@@ -98,3 +98,12 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Large screens: headings keep growing past the default caps. */
+@media (min-width: 1600px) {
+  :root {
+    --text-hero: clamp(68px, 4.6vw, 96px);
+    --text-contact: clamp(56px, 3.8vw, 76px);
+    --text-section: clamp(40px, 2.6vw, 52px);
+  }
+}

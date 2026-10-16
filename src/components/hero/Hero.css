@@ -3,20 +3,12 @@
   margin: 0 auto;
   padding: 96px 40px 32px;
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: 72px;
+  /* Text and photo stay together as one centred group rather than being
+     pushed to opposite edges of the wide container. */
+  grid-template-columns: minmax(0, 640px) minmax(0, 400px);
+  justify-content: center;
+  gap: clamp(48px, 5vw, 80px);
   align-items: center;
-}
-
-.hero-greeting {
-  margin: 0 0 20px;
-  font-size: 18px;
-  color: var(--muted);
-}
-
-.hero-greeting strong {
-  color: var(--ink);
-  font-weight: 600;
 }
 
 .hero-title {
@@ -118,7 +110,6 @@
 
 .hero-photo {
   margin: 0;
-  justify-self: end;
   width: 100%;
   max-width: 400px;
 }
@@ -171,5 +162,25 @@
   .hero-ctas {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    grid-template-columns: minmax(0, 720px) minmax(0, 500px);
+    gap: 96px;
+  }
+
+  .hero-proof {
+    max-width: 680px;
+    font-size: 22px;
+  }
+
+  .hero-status {
+    font-size: 19px;
+  }
+
+  .hero-photo {
+    max-width: 500px;
   }
 }

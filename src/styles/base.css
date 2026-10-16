@@ -308,3 +308,43 @@ main > section[id] {
     padding-right: 16px;
   }
 }
+
+/* Large screens: step body text and shared controls up so the wider page
+   doesn't read as small print. */
+@media (min-width: 1600px) {
+  body {
+    font-size: 18px;
+  }
+
+  .kicker {
+    font-size: 14px;
+  }
+
+  .h2-small {
+    font-size: 28px;
+  }
+
+  .btn {
+    min-height: 52px;
+    font-size: 17px;
+  }
+
+  .btn-small {
+    min-height: 46px;
+    font-size: 16px;
+  }
+
+  .link-btn,
+  .social {
+    font-size: 16px;
+  }
+
+  .tag {
+    min-height: 30px;
+    font-size: 13.5px;
+  }
+
+  .bullets li {
+    font-size: 18px;
+  }
+}

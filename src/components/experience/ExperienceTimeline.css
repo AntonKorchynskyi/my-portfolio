@@ -131,3 +131,23 @@
     padding: 20px;
   }
 }
+
+@media (min-width: 1600px) {
+  .exp-range,
+  .exp-role-meta,
+  .exp-card-dates {
+    font-size: 14px;
+  }
+
+  .exp-summary {
+    font-size: 18px;
+  }
+
+  .exp-role-title {
+    font-size: 23px;
+  }
+
+  .exp-card-title {
+    font-size: 26px;
+  }
+}

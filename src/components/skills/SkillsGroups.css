@@ -43,3 +43,14 @@
     gap: 32px 24px;
   }
 }
+
+@media (min-width: 1600px) {
+  .skills-group-name {
+    font-size: 14px;
+  }
+
+  .skills-list li {
+    min-height: 46px;
+    font-size: 18px;
+  }
+}

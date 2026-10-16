@@ -68,3 +68,17 @@
     word-break: break-all;
   }
 }
+
+@media (min-width: 1600px) {
+  .contact-lead {
+    font-size: 20px;
+  }
+
+  .contact-label {
+    font-size: 14px;
+  }
+
+  .contact-email {
+    font-size: 30px;
+  }
+}

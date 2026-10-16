@@ -69,3 +69,21 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1600px) {
+  .edu-school-name {
+    font-size: 20px;
+  }
+
+  .edu-program {
+    font-size: 17px;
+  }
+
+  .edu-dates {
+    font-size: 14px;
+  }
+
+  .edu-gpa {
+    font-size: 15px;
+  }
+}
