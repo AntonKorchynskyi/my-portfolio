@@ -3,19 +3,42 @@ import "./SkillsGroups.css";
 const groups = [
   {
     name: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Angular", "HTML & CSS", "Tailwind CSS", "WCAG / AODA"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Angular",
+      "HTML & CSS",
+      "Tailwind CSS",
+      "WCAG / AODA",
+    ],
   },
   {
     name: "Backend",
-    skills: ["Node.js", "Python (Flask, FastAPI)", "REST APIs", "C# / ASP.NET", "Java", "Spring Boot"],
+    skills: [
+      "Node.js",
+      "Python (Flask, FastAPI)",
+      "REST APIs",
+      "C# / ASP.NET",
+      "Java",
+      "Spring Boot",
+    ],
   },
   {
     name: "Cloud & DevOps",
-    skills: ["Azure", "Kubernetes (AKS)", "Docker", "GitHub Actions", "Azure DevOps"],
+    skills: [
+      "Azure",
+      "Kubernetes (AKS)",
+      "Docker",
+      "GitHub Actions",
+      "Azure DevOps",
+      "Git",
+    ],
   },
   {
     name: "Data",
-    skills: ["PostgreSQL", "MySQL", "MS SQL", "pandas", "Power BI"],
+    skills: ["PostgreSQL", "MySQL", "MS SQL", "pandas", "Power BI", "MongoDB"],
   },
 ];
 

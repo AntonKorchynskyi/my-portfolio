@@ -11,7 +11,6 @@ const Footer = () => {
         <p className="mono">
           © {currentYear} {config.name}
         </p>
-        <p className="mono">Built with React and TypeScript · WCAG 2.2 AA</p>
         <nav className="footer-nav" aria-label="Footer">
           <ul>
             <li>
@@ -39,7 +38,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a className="social" href={`mailto:${config.email}`} data-track="email/footer">
+              <a
+                className="social"
+                href={`mailto:${config.email}`}
+                data-track="email/footer"
+              >
                 <MailIcon size={16} />
                 Email
               </a>

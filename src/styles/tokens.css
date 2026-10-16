@@ -1,4 +1,4 @@
-/* Anton Korchynskyi design tokens. Generated from tokens.json (design system "Anton Korchynskyi").
+/* Anton Korchynskyi design tokens. Generated from tokens.json (design system "Resume").
    Dark is the default theme. Light follows prefers-color-scheme unless the user picks a theme,
    which the toggle stores as data-theme on <html>. */
 
@@ -89,7 +89,9 @@
    Custom properties cannot be used inside @media, so use these literal values. */
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

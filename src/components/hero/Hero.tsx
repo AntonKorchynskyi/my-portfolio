@@ -1,6 +1,12 @@
 import { config } from "../../config";
 import photo400 from "../../assets/img/anton-400.webp";
-import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "../ui/Icons";
+import {
+  ArrowRightIcon,
+  DownloadIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from "../ui/Icons";
 import "./Hero.css";
 
 const Hero = () => {
@@ -8,32 +14,36 @@ const Hero = () => {
     <section id="overview" aria-labelledby="hero-title">
       <div className="hero">
         <div>
-          <p className="hero-greeting">
-            Hi, I'm <strong>Anton</strong>, a full-stack developer in Ontario, Canada.
-          </p>
           {/* Lines rise into place but are painted from the first frame. */}
           <h1 id="hero-title" className="hero-title">
             <span className="hero-line">
-              <span style={{ "--i": 0 } as React.CSSProperties}>Web apps that work</span>
+              <span style={{ "--i": 0 } as React.CSSProperties}>Hi, I'm</span>
             </span>
             <span className="hero-line">
-              <span className="hero-accent" style={{ "--i": 1 } as React.CSSProperties}>
-                for everyone.
+              <span
+                className="hero-accent"
+                style={{ "--i": 1 } as React.CSSProperties}
+              >
+                <strong>Anton</strong> :)
               </span>
             </span>
           </h1>
           <p className="hero-proof">
-            Around two years at the Ontario Public Service shipping accessible React and
-            Next.js interfaces, Flask microservices on Azure Kubernetes Service, and the
-            GitHub Actions pipelines that deploy them. Now also building backends with Java
-            and Spring Boot.
+            A software developer with experience shipping accessible React and
+            Next.js interfaces, Java and Spring Boot REST APIs, Flask
+            microservices on Azure Kubernetes Service, and the GitHub Actions
+            pipelines that deploy them.
           </p>
           <p className="hero-status">
             <span className="status-dot" aria-hidden="true" />
             Looking for Full-Stack and Frontend roles, remote or hybrid.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-primary" href="#contact" data-track="contact/hero">
+            <a
+              className="btn btn-primary"
+              href="#contact"
+              data-track="contact/hero"
+            >
               Get in touch
               <ArrowRightIcon />
             </a>
@@ -43,7 +53,7 @@ const Hero = () => {
               download={config.resumeFileName}
               data-track="resume/hero"
             >
-              Download resume
+              Resume
               <DownloadIcon />
             </a>
           </div>
@@ -73,7 +83,11 @@ const Hero = () => {
               </a>
             </li>
             <li>
-              <a className="social" href={`mailto:${config.email}`} data-track="email/hero">
+              <a
+                className="social"
+                href={`mailto:${config.email}`}
+                data-track="email/hero"
+              >
                 <MailIcon />
                 Email
               </a>
