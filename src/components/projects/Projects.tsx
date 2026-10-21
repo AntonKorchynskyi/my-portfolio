@@ -1,6 +1,8 @@
 import { config } from "../../config";
 import boardverse600 from "../../assets/img/boardverse-600.webp";
 import boardverse1200 from "../../assets/img/boardverse-1200.webp";
+import plotlineai600 from "../../assets/img/plotlineai-600.webp";
+import plotlineai1200 from "../../assets/img/plotlineai-1200.webp";
 import soundhousefun600 from "../../assets/img/soundhousefun-600.webp";
 import soundhousefun1200 from "../../assets/img/soundhousefun-1200.webp";
 import { ArrowUpRightIcon } from "../ui/Icons";
@@ -34,6 +36,11 @@ const featured: Project = {
   ],
   codeUrl: "https://github.com/AntonKorchynskyi/plotlineai",
   // No public URL yet; add liveUrl here once it is deployed publicly.
+  image: {
+    src600: plotlineai600,
+    src1200: plotlineai1200,
+    alt: "PlotlineAI, an AI chart recommendation tool",
+  },
 };
 
 const pair: Project[] = [
