@@ -26,11 +26,24 @@ const roles: Role[] = [
         title: "Business Experience Platform (BXP)",
         dates: "May 2025 to Oct 2025",
         highlights: [
-          "Built reusable React and Next.js components from Figma and the Ontario Design System for the ServiceOntario Account for Business modernization.",
-          "Met WCAG and AODA with semantic HTML, ARIA patterns and full keyboard support, alongside designers, QA and backend developers.",
-          "Planned the legacy migration with pandas analysis and supported the Ontario Business Registry API integration.",
+          "Developed reusable React and Next.js components using TypeScript, Figma, and the Ontario Design System to deliver accessible, responsive interfaces for ServiceOntario's Account for Business modernization.",
+          "Built Java 17+, Spring Boot, Python and Flask REST APIs, integrating backend services with the UI layer and implementing validation and error handling to support reliable business-data exchange.",
+          "Integrated Ontario Business Registry APIs for business search and linking workflows, while implementing English/French localization with next-intl to improve access to business information.",
+          "Applied TDD practices with Jest, JUnit and PyTest, supporting regression, UAT, and WCAG 2.1 AA/AODA accessibility testing to identify defects and validate functionality before release.",
         ],
-        tags: ["Next.js", "React", "TypeScript", "Java", "Tailwind CSS", "WCAG/AODA", "Azure DevOps"],
+        tags: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Java",
+          "Spring Boot",
+          "Python",
+          "Flask",
+          "Tailwind CSS",
+          "next-intl",
+          "WCAG/AODA",
+          "Azure DevOps",
+        ],
       },
     ],
   },
@@ -42,21 +55,40 @@ const roles: Role[] = [
         title: "EDR Admin Platform",
         dates: "Sep 2024 to Apr 2025",
         highlights: [
-          "Built an admin platform tracking the hospitals, coroners' offices and cemeteries on Ontario's Electronic Death Registration system, and their users.",
-          "Automated internal workflows with structured SharePoint lists, Power Apps and Power Automate.",
-          "Mapped institution locations with a custom SPFx component (Leaflet) and Power BI.",
+          "Developed an administrative platform for Ontario's Electronic Death Registration system to centralize information about hospitals, coroners' offices, cemeteries, and associated users.",
+          "Built structured SharePoint Lists and automated administrative workflows using Power Apps and Power Automate to simplify institution and user management.",
+          "Developed an interactive mapping component using TypeScript, SharePoint SPFx, and Leaflet, alongside Power BI reporting, to visualize institution locations and support administrative oversight.",
         ],
-        tags: ["SharePoint SPFx", "Power Apps", "Power Automate", "Power BI", "Leaflet", "Java"],
+        tags: [
+          "SharePoint SPFx",
+          "Power Apps",
+          "Power Automate",
+          "Power BI",
+          "Leaflet",
+          "Java",
+        ],
       },
       {
         title: "SOAB eForms Proof of Concept",
         dates: "Jan 2024 to Aug 2024",
         highlights: [
-          "Designed the microservice architecture and built the React frontend and Flask and MySQL backend.",
-          "Containerized with Docker, deployed to Azure Kubernetes Service, and automated releases with GitHub Actions.",
-          "Added SendGrid notifications; the prototype proved scalable cloud form processing for ServiceOntario.",
+          "Designed a microservice-based eForms proof of concept using React, JavaScript, Python, Flask, and MySQL to demonstrate cloud-based form processing for ServiceOntario.",
+          "Containerized application services with Docker and deployed them to Azure Kubernetes Service (AKS) to provide consistent development and testing environments.",
+          "Built GitHub Actions CI/CD pipelines to automate builds, tests, and deployments across DEV and UAT environments, reducing manual release effort.",
+          "Integrated SendGrid email notifications into the eForms workflow to demonstrate automated communication during form processing.",
         ],
-        tags: ["React", "Flask", "MySQL", "Docker", "AKS", "GitHub Actions"],
+        tags: [
+          "React",
+          "JavaScript",
+          "Python",
+          "Flask",
+          "MySQL",
+          "Docker",
+          "AKS",
+          "GitHub Actions",
+          "CI/CD",
+          "SendGrid",
+        ],
       },
     ],
   },
@@ -87,7 +119,9 @@ const ExperienceTimeline = () => {
       const rect = node.getBoundingClientRect();
       return rect.top + rect.height / 2 - box.top <= tip + 1;
     });
-    setLit((prev) => (prev.every((value, i) => value === next[i]) ? prev : next));
+    setLit((prev) =>
+      prev.every((value, i) => value === next[i]) ? prev : next,
+    );
   });
 
   return (
@@ -100,8 +134,8 @@ const ExperienceTimeline = () => {
           </h2>
           <p className="exp-range mono">Jan 2024 to Oct 2025</p>
           <p className="exp-summary">
-            Started as a co-op in January 2024, then hired full time as an I&amp;IT Technology
-            Specialist.
+            Started as a co-op in January 2024, then hired full time as an
+            I&amp;IT Technology Specialist.
           </p>
         </div>
 
@@ -138,7 +172,10 @@ const ExperienceTimeline = () => {
                               <li key={highlight}>{highlight}</li>
                             ))}
                           </ul>
-                          <ul className="tags exp-card-tags" aria-label="Tech used">
+                          <ul
+                            className="tags exp-card-tags"
+                            aria-label="Tech used"
+                          >
                             {project.tags.map((tag) => (
                               <li key={tag} className="tag">
                                 {tag}

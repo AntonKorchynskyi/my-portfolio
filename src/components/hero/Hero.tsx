@@ -24,15 +24,15 @@ const Hero = () => {
                 className="hero-accent"
                 style={{ "--i": 1 } as React.CSSProperties}
               >
-                <strong>Anton</strong> :)
+                <strong>Anton :)</strong>
               </span>
             </span>
           </h1>
           <p className="hero-proof">
             A software developer with experience shipping accessible React and
-            Next.js interfaces, Java and Spring Boot REST APIs, Flask
-            microservices on Azure Kubernetes Service, and the GitHub Actions
-            pipelines that deploy them.
+            Next.js interfaces, REST APIs using Java and Spring Boot, and
+            microservices using Python and Flask, deployed across Azure and AWS
+            cloud environments.
           </p>
           <p className="hero-status">
             <span className="status-dot" aria-hidden="true" />

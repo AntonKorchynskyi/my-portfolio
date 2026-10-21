@@ -167,7 +167,7 @@
 
 @media (min-width: 1600px) {
   .hero {
-    grid-template-columns: minmax(0, 720px) minmax(0, 500px);
+    grid-template-columns: minmax(0, 720px) minmax(0, 400px);
     gap: 96px;
   }
 
@@ -181,6 +181,6 @@
   }
 
   .hero-photo {
-    max-width: 500px;
+    max-width: 400px;
   }
 }

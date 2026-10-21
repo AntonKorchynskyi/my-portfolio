@@ -10,7 +10,11 @@ const Education = () => {
   const close = useCallback(() => setIsOpen(false), []);
 
   return (
-    <section id="education" className="sec edu" aria-labelledby="education-title">
+    <section
+      id="education"
+      className="sec edu"
+      aria-labelledby="education-title"
+    >
       <div className="split edu-split">
         <div>
           <p className="kicker edu-kicker">05 · Education</p>
@@ -22,7 +26,8 @@ const Education = () => {
           <div className="edu-school">
             <p className="edu-school-name">Georgian College</p>
             <p className="edu-program">
-              Computer Programming and Analysis · Advanced Diploma, Co-op · Barrie, Ontario
+              Computer Programming and Analysis · Advanced Diploma · Barrie,
+              Ontario
             </p>
           </div>
           <span className="edu-dates mono">2022 to 2025</span>

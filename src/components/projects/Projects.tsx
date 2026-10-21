@@ -15,10 +15,23 @@ import "./Projects.css";
 const featured: Project = {
   slug: "plotlineai",
   title: "PlotlineAI",
-  problem: "Turning a raw CSV into the right chart usually means guessing which chart fits the data.",
+  problem:
+    "Choosing the right visualization for a CSV dataset isn't always straightforward.",
   built:
-    "Upload a CSV and an AI agent suggests the best charts, rendered from the real data. A Next.js frontend and a Spring Boot API on Java 25, with DynamoDB and S3, deployed serverless on AWS with CDK.",
-  tags: ["Next.js", "Spring Boot", "TypeScript", "AWS CDK", "DynamoDB"],
+    "PlotlineAI uses the OpenAI API to recommend suitable charts with explanations, then generates interactive visualizations from the uploaded data. Built with Next.js, TypeScript, Java 25, and Spring Boot, and deployed serverlessly on AWS using Lambda, S3, DynamoDB, and CDK.",
+  tags: [
+    "Next.js",
+    "Spring Boot",
+    "TypeScript",
+    "OpenAI API",
+    "AWS Lambda",
+    "AWS S3",
+    "AWS CDK",
+    "AWS RedShift",
+    "AWS SQS",
+    "AWS CloudWatch",
+    "DynamoDB",
+  ],
   codeUrl: "https://github.com/AntonKorchynskyi/plotlineai",
   // No public URL yet; add liveUrl here once it is deployed publicly.
 };
@@ -42,10 +55,18 @@ const pair: Project[] = [
   {
     slug: "boardverse",
     title: "BoardVerse",
-    problem: "Playing board games with friends online, with stats that follow you between games.",
+    problem:
+      "Playing board games with friends online, with stats that follow you between games.",
     built:
       "Accounts, player profiles that track stats, and real-time multiplayer Tic-Tac-Toe on boardgame.io, backed by a Flask API.",
-    tags: ["Next.js", "React", "Tailwind CSS", "boardgame.io", "Flask"],
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "boardgame.io",
+      "Flask",
+      "Python",
+    ],
     codeUrl: "https://github.com/AntonKorchynskyi/boardverse-frontend",
     liveUrl: "https://boardverse.vercel.app",
     image: {
@@ -60,7 +81,8 @@ const moreProjects: ListedProject[] = [
   {
     slug: "chart-lab",
     name: "Chart Lab",
-    description: "Renders the same revenue datasets in six charting libraries side by side.",
+    description:
+      "Renders the same revenue datasets in six charting libraries side by side.",
     stack: ["React", "TypeScript", "FastAPI"],
     codeUrl: "https://github.com/AntonKorchynskyi/chart-lab",
   },
@@ -75,21 +97,24 @@ const moreProjects: ListedProject[] = [
   {
     slug: "movienest",
     name: "MovieNest",
-    description: "Android app for searching OMDb titles, with a watchlist synced through Firebase.",
+    description:
+      "Android app for searching OMDb titles, with a watchlist synced through Firebase.",
     stack: ["Java", "Android", "Firebase"],
     codeUrl: "https://github.com/AntonKorchynskyi/MovieNest",
   },
   {
     slug: "no-addict",
     name: "No Addict",
-    description: "Chrome extension that blocks distracting sites by domain or URL before they load.",
+    description:
+      "Chrome extension that blocks distracting sites by domain or URL before they load.",
     stack: ["JavaScript", "Chrome Extensions"],
     codeUrl: "https://github.com/AntonKorchynskyi/no-addict",
   },
   {
     slug: "mailsheet-automator",
     name: "MailSheet Automator",
-    description: "Python tool that validates Excel data and sends bulk HTML emails through Outlook.",
+    description:
+      "Python tool that validates Excel data and sends bulk HTML emails through Outlook.",
     stack: ["Python", "openpyxl", "Outlook COM"],
     codeUrl: "https://github.com/AntonKorchynskyi/MailSheet-Automator",
   },

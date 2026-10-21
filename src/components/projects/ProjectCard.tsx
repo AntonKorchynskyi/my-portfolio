@@ -39,7 +39,11 @@ const ProjectShot = ({ project, featured }: ProjectCardProps) => (
         <img
           src={project.image.src1200}
           srcSet={`${project.image.src600} 600w, ${project.image.src1200} 1200w`}
-          sizes={featured ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 560px"}
+          sizes={
+            featured
+              ? "(max-width: 900px) 100vw, 640px"
+              : "(max-width: 900px) 100vw, 560px"
+          }
           alt={project.image.alt}
           loading="lazy"
           width="1200"
@@ -48,7 +52,9 @@ const ProjectShot = ({ project, featured }: ProjectCardProps) => (
       ) : (
         <div className="project-placeholder" aria-hidden="true">
           <span className="project-placeholder-title">{project.title}</span>
-          <span className="project-placeholder-tags mono">{project.tags.join(" · ")}</span>
+          <span className="project-placeholder-tags mono">
+            {project.tags.join(" · ")}
+          </span>
         </div>
       )}
     </div>
@@ -75,16 +81,6 @@ const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
             ))}
           </ul>
           <div className="project-actions">
-            <a
-              className="link-btn"
-              href={project.codeUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-track={`code/${project.slug}`}
-            >
-              <GitHubIcon size={16} />
-              Code<span className="sr-only"> for {project.title}</span>
-            </a>
             {project.liveUrl && (
               <a
                 className="btn btn-primary btn-small"
@@ -97,6 +93,16 @@ const ProjectCard = ({ project, featured = false }: ProjectCardProps) => {
                 <ArrowUpRightIcon />
               </a>
             )}
+            <a
+              className="link-btn"
+              href={project.codeUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-track={`code/${project.slug}`}
+            >
+              <GitHubIcon size={16} />
+              Code<span className="sr-only"> for {project.title}</span>
+            </a>
           </div>
         </div>
       </article>

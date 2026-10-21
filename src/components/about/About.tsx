@@ -13,18 +13,21 @@ const About = () => {
         </div>
         <Reveal className="about-body">
           <p className="about-lead">
-            I got into software at Georgian College, where building things real
-            people use quickly became the part I cared about most.
+            I got into software at Georgian College, where I discovered how much
+            I enjoy building applications that people can actually use.
           </p>
           <p>
-            At the Ontario Public Service I spent around two years on digital
-            services used across the province. Working to WCAG and AODA
-            standards taught me that a feature is only done when it works with a
-            keyboard and a screen reader too.
+            Through co-op placements and a subsequent role at the Ontario Public
+            Service, I contributed to digital services used across the province.
+            Working in a regulated enterprise environment taught me the
+            importance of building secure, reliable, and maintainable software
+            that meets real-world requirements.
           </p>
           <p>
-            Outside work I keep building, from a charting playground to a Chrome
-            extension, mostly to learn something new each time.
+            Outside work, I keep building, from an AI-powered data visualization
+            application to a Chrome extension. Every project is an opportunity
+            to solve problems, explore new technologies, and grow as a
+            developer.
           </p>
         </Reveal>
       </div>
