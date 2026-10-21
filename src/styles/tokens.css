@@ -1,0 +1,109 @@
+/* Anton Korchynskyi design tokens. Generated from tokens.json (design system "Resume").
+   Dark is the default theme. Light follows prefers-color-scheme unless the user picks a theme,
+   which the toggle stores as data-theme on <html>. */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0b0d;
+  --surface: #111317;
+  --surface-2: #16191e;
+  --line: #23272f;
+  --line-strong: #343a44;
+  --ink: #edeff2;
+  --muted: #9ba3af;
+  --accent: #3dd8c6;
+  --on-accent: #04201c;
+  --accent-soft: rgba(61, 216, 198, 0.12);
+  --spot: rgba(61, 216, 198, 0.6);
+  --header-bg: rgba(10, 11, 13, 0.72);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7f8f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f5;
+  --line: #e3e6ea;
+  --line-strong: #cdd2d8;
+  --ink: #0b0d10;
+  --muted: #4f5866;
+  --accent: #0f766e;
+  --on-accent: #ffffff;
+  --accent-soft: rgba(15, 118, 110, 0.1);
+  --spot: rgba(15, 118, 110, 0.5);
+  --header-bg: rgba(247, 248, 249, 0.8);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f7f8f9;
+    --surface: #ffffff;
+    --surface-2: #f1f3f5;
+    --line: #e3e6ea;
+    --line-strong: #cdd2d8;
+    --ink: #0b0d10;
+    --muted: #4f5866;
+    --accent: #0f766e;
+    --on-accent: #ffffff;
+    --accent-soft: rgba(15, 118, 110, 0.1);
+    --spot: rgba(15, 118, 110, 0.5);
+    --header-bg: rgba(247, 248, 249, 0.8);
+  }
+}
+
+:root {
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --text-hero: clamp(40px, 6vw, 68px);
+  --text-contact: clamp(40px, 6vw, 56px);
+  --text-section: clamp(28px, 4vw, 40px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-18: 72px;
+  --space-24: 96px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --radius-photo: 20px;
+  --radius-pill: 999px;
+  --shadow-dialog: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --duration-press: 160ms;
+  --duration-ui: 240ms;
+  --duration-reveal: 380ms;
+  --duration-zoom: 400ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --container: min(calc(90vw + 80px), 1680px);
+}
+
+/* Breakpoints (max-width): 1100px wide, 900px tablet, 700px small, 600px phone.
+   Custom properties cannot be used inside @media, so use these literal values. */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Large screens: headings keep growing past the default caps. */
+@media (min-width: 1600px) {
+  :root {
+    --text-hero: clamp(68px, 4.6vw, 96px);
+    --text-contact: clamp(56px, 3.8vw, 76px);
+    --text-section: clamp(40px, 2.6vw, 52px);
+  }
+}

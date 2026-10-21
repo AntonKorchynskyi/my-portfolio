@@ -1,0 +1,153 @@
+.exp-intro {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.exp-range {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.exp-summary {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.exp-timeline {
+  position: relative;
+  padding-left: 44px;
+}
+
+.exp-track,
+.exp-line {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  bottom: 30px;
+  width: 2px;
+}
+
+.exp-track {
+  background: var(--line);
+}
+
+.exp-line {
+  background: var(--accent);
+  transform-origin: top;
+}
+
+.exp-roles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 40px;
+}
+
+.exp-role {
+  position: relative;
+}
+
+.exp-node {
+  position: absolute;
+  left: -39px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--line-strong);
+  box-shadow: 0 0 0 4px var(--bg);
+  transition:
+    background-color var(--duration-ui) ease,
+    border-color var(--duration-ui) ease,
+    box-shadow var(--duration-ui) ease;
+}
+
+.exp-node.is-lit {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 0 8px var(--accent-soft);
+}
+
+.exp-role-head {
+  margin-bottom: 16px;
+}
+
+.exp-role-title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.exp-role-meta {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.exp-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.exp-card {
+  padding: 28px 32px;
+}
+
+.exp-card-dates {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.exp-card-title {
+  margin: 6px 0 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.exp-card-tags {
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .exp-intro {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .exp-card {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .exp-range,
+  .exp-role-meta,
+  .exp-card-dates {
+    font-size: 14px;
+  }
+
+  .exp-summary {
+    font-size: 18px;
+  }
+
+  .exp-role-title {
+    font-size: 23px;
+  }
+
+  .exp-card-title {
+    font-size: 26px;
+  }
+}

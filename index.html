@@ -4,7 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anton Korchynskyi - Portfolio</title>
+    <title>Anton Korchynskyi - Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Full-stack developer in Ontario, Canada, available for Full-Stack and Frontend roles. Accessible React and Next.js interfaces, with Python and Java backends on Azure and AWS."
+    />
+    <link rel="canonical" href="https://anton-korchynskyi-portfolio.vercel.app/" />
+    <meta name="theme-color" content="#0a0b0d" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+    />
+
+    <!-- Apply a saved theme before first paint so there is no flash. -->
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark" || theme === "light") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {}
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anton-korchynskyi-portfolio.vercel.app/" />
+    <meta property="og:title" content="Anton Korchynskyi - Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Web apps that work for everyone. Accessible React and Next.js, Python and Java backends. Available now for Full-Stack and Frontend roles."
+    />
+    <meta property="og:image" content="https://anton-korchynskyi-portfolio.vercel.app/og-image.png" />
+    <meta property="og:image:alt" content="Portrait of Anton Korchynskyi" />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anton Korchynskyi",
+        "jobTitle": "Full-Stack Developer",
+        "url": "https://anton-korchynskyi-portfolio.vercel.app/",
+        "image": "https://anton-korchynskyi-portfolio.vercel.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "sameAs": [
+          "https://github.com/AntonKorchynskyi",
+          "https://www.linkedin.com/in/anton-korchynskyi-085b96279"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

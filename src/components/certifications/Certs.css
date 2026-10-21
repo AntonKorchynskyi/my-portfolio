@@ -1,0 +1,88 @@
+.sec.certs {
+  padding-top: 40px;
+}
+
+.kicker.certs-kicker {
+  margin-bottom: 6px;
+}
+
+.certs-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 12px;
+}
+
+.certs-grid li {
+  display: flex;
+}
+
+.link-btn.cert-tile {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+  padding: 14px 36px 14px 16px;
+}
+
+.cert-code {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cert-name {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cert-arrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  color: var(--muted);
+}
+
+.certs-more {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.certs-inline-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.certs-inline-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .certs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .cert-code {
+    font-size: 16px;
+  }
+
+  .cert-name {
+    font-size: 14px;
+  }
+
+  .certs-more {
+    font-size: 16px;
+  }
+}

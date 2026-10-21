@@ -1,0 +1,89 @@
+.sec.edu {
+  padding-top: 56px;
+  padding-bottom: 0;
+}
+
+.edu-split {
+  align-items: center;
+}
+
+.kicker.edu-kicker {
+  margin-bottom: 6px;
+}
+
+.edu-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.edu-school {
+  flex: 1;
+  min-width: 0;
+}
+
+.edu-school-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.edu-program {
+  margin: 2px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.edu-dates {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.edu-gpa {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .edu-row {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .edu-school {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .edu-row .link-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .edu-school-name {
+    font-size: 20px;
+  }
+
+  .edu-program {
+    font-size: 17px;
+  }
+
+  .edu-dates {
+    font-size: 14px;
+  }
+
+  .edu-gpa {
+    font-size: 15px;
+  }
+}

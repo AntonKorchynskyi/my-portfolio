@@ -1,0 +1,126 @@
+.cw-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cw-dialog {
+  width: 100%;
+  max-width: 760px;
+  max-height: min(720px, calc(100vh - 48px));
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-dialog);
+  overflow: hidden;
+}
+
+.cw-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 20px 20px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cw-head-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cw-head .kicker {
+  margin-bottom: 6px;
+}
+
+.cw-title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.cw-desc {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.cw-scroll {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.cw-table {
+  font-size: 15px;
+}
+
+.cw-table-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.cw-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 80px;
+  padding: 0 28px;
+  min-height: 48px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.cw-table-head .cw-row {
+  min-height: 40px;
+  border-bottom: 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.cw-code {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cw-grade {
+  text-align: right;
+  font-size: 14px;
+}
+
+.cw-table-head .cw-grade {
+  font-size: 12.5px;
+}
+
+.cw-grade.is-top {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .cw-overlay {
+    padding: 24px 16px;
+  }
+
+  .cw-head {
+    padding: 18px 12px 16px 20px;
+  }
+
+  .cw-row {
+    grid-template-columns: 76px minmax(0, 1fr) 52px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

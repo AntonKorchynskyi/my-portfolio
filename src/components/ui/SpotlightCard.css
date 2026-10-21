@@ -1,0 +1,50 @@
+.spotlight-card {
+  --spot-x: 50%;
+  --spot-y: 0%;
+  position: relative;
+  padding: 1px;
+  border-radius: var(--radius-xl);
+  background: var(--line);
+  transition: transform 200ms ease;
+}
+
+/* The glow sits on a layer that fades in, since gradients can't transition. */
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--spot-x) var(--spot-y),
+    var(--spot),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-ui) ease;
+  pointer-events: none;
+}
+
+.spotlight-card:hover,
+.spotlight-card:focus-within {
+  transform: translateY(-2px);
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+/* Inner surface sits above the glow layer, leaving only the 1px edge lit. */
+.spotlight-card > * {
+  position: relative;
+  background: var(--surface);
+  border-radius: calc(var(--radius-xl) - 1px);
+}
+
+.spotlight-card.is-small {
+  border-radius: var(--radius-lg);
+}
+
+.spotlight-card.is-small > * {
+  border-radius: calc(var(--radius-lg) - 1px);
+}

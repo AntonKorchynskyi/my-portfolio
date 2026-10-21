@@ -1,21 +1,14 @@
-import headshotImage from "./assets/anton_image.png";
-
 // Portfolio configuration
-// TODO: Replace placeholder values with your actual URLs and email
 
 export const config = {
+  name: "Anton Korchynskyi",
+
   // Social Links
   github: "https://github.com/AntonKorchynskyi",
   linkedin: "https://www.linkedin.com/in/anton-korchynskyi-085b96279",
   email: "anton.korchynskyi28@gmail.com",
 
-  // Resume
-  resumeUrl: "/Anton_Korchynskyi-Resume_Portfolio.pdf", // Resume PDF should be placed in public/ directory
-
-  //Image
-  headshotUrl: headshotImage,
-
-  // Career Goals
-  careerGoal:
-    "Currently seeking Full-Stack Developer roles in remote/hybrid environments and collaboration on interesting projects.", // TODO: Customize based on your goals
+  // Resume PDF lives in public/
+  resumeUrl: "/Anton_Korchynskyi-Resume_Portfolio.pdf",
+  resumeFileName: "Anton-Korchynskyi-Resume.pdf",
 };
