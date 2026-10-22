@@ -35,7 +35,7 @@ const featured: Project = {
     "DynamoDB",
   ],
   codeUrl: "https://github.com/AntonKorchynskyi/plotlineai",
-  // No public URL yet; add liveUrl here once it is deployed publicly.
+  liveUrl: "https://d2c5dopbhn9uhj.cloudfront.net",
   image: {
     src600: plotlineai600,
     src1200: plotlineai1200,
